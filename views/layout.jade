@@ -1,7 +1,11 @@
+include /_mixins
+
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/app.css')
+    title Trello Clone
+    +stylesheet_link_tag("app")
+    +javascript_include_tag("vendor/all")
+    +javascript_include_tag("handlebars_templates")
   body
     block content

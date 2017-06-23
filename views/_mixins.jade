@@ -1,0 +1,7 @@
+mixin stylesheet_link_tag(src)
+  link(rel='stylesheet' href='/stylesheets/#{src}.css')
+
+mixin javascript_include_tag(src, ...rest)
+  script(src="/javascripts/#{src}.js")
+  each file in rest
+    script(src="/javascripts/#{file}.js")
