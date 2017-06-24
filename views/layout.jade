@@ -4,8 +4,14 @@ doctype html
 html
   head
     title Trello Clone
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
     +stylesheet_link_tag("app")
     +javascript_include_tag("vendor/all")
     +javascript_include_tag("handlebars_templates")
   body
     block content
+
+    +javascript_include_tag("app")
+    +javascript_include_tag("views/board")
+    script.
+      App.init();
