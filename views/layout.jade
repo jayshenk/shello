@@ -12,6 +12,10 @@ html
     block content
 
     +javascript_include_tag("app")
+    +javascript_include_tag("models/card")
+    +javascript_include_tag("collections/cards", "collections/lists")
     +javascript_include_tag("views/board")
     script.
+      App.cards = new Cards(!{JSON.stringify(cards)});
+      App.lists = new Lists(!{JSON.stringify(lists)});
       App.init();

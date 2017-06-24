@@ -1,9 +1,12 @@
-var express = require('express');
-var router = express.Router();
+var path = require("path");
+var Cards = require(path.resolve(path.dirname(__dirname), "modules/cards"));
+var Lists = require(path.resolve(path.dirname(__dirname), "modules/lists"));
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
-});
-
-module.exports = router;
+module.exports = function(router) {
+  router.get('/', function(req, res, next) {
+    res.render('index', {
+      cards: Cards.get(),
+      lists: Lists.get()
+    });
+  });
+};
