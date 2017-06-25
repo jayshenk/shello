@@ -39,12 +39,29 @@ main header h2 {
   font-size: 18px;
   color: #f6f6f6;
 }
-main ul#lists li {
+main ul#lists > li {
   display: inline-block;
   width: 270px;
+  margin-right: 8px;
+  vertical-align: top;
   background: #e2e4e6;
   box-sizing: border-box;
   border-radius: 3px;
+}
+main ul#lists > li ul.cards {
+  padding: 6px;
+}
+main ul#lists > li ul.cards li {
+  background: #fff;
+  border-radius: 3px;
+}
+main ul#lists > li ul.cards li:hover {
+  cursor: pointer;
+  background: #edeff0;
+}
+main ul#lists > li ul.cards li p {
+  padding: 8px;
+  color: #494949;
 }
 main ul#lists li.add-list {
   padding: 12px;

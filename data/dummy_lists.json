@@ -1,0 +1,12 @@
+{
+  "last_id": 2,
+  "data": [
+    {
+      "id": 1,
+      "name": "Basics"
+    }, {
+      "id": 2,
+      "name": "Intermediate"
+    }
+  ]
+}

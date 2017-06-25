@@ -36,12 +36,25 @@ main
       font-size: 18px
       color: #f6f6f6
   ul#lists
-    li
+    > li
       display: inline-block
       width: 270px
+      margin-right: 8px
+      vertical-align: top
       background: #e2e4e6
       box-sizing: border-box
       border-radius: 3px
+      ul.cards
+        padding: 6px
+        li
+          background: #fff
+          border-radius: 3px
+          &:hover
+            cursor: pointer
+            background: #edeff0
+          p
+            padding: 8px
+            color: #494949
     li.add-list
       padding: 12px
       color: rgba(255,255,255,.7)

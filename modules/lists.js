@@ -1,6 +1,6 @@
 var path = require("path");
 var fs = require("fs");
-var file_path = path.resolve(path.dirname(__dirname), "data/lists.json");
+var file_path = path.resolve(path.dirname(__dirname), "data/dummy_lists.json");
 
 module.exports = {
   __readFile: function() {

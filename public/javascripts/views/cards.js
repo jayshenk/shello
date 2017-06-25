@@ -1,12 +1,14 @@
 var CardsView = Backbone.View.extend({
   render: function() {
-    this.collection.each(this.renderOne.bind(this));
+    var cards = this.collection.where({ listID: this.listID });
+    cards.forEach(this.renderOne.bind(this));
   },
   renderOne: function(model) {
     var cardView = new CardView({ model: model });
     this.$el.append(cardView.render().el);
   },
   initialize: function() {
+    this.listID = this.$el.data('list-id');
     this.render();
   }
 });

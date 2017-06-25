@@ -5,7 +5,7 @@ var Lists = require(path.resolve(path.dirname(__dirname), "modules/lists"));
 module.exports = function(router) {
   router.get('/', function(req, res, next) {
     res.render('index', {
-      cards: Cards.get(),
+      cards: Cards.getInitialData(),
       lists: Lists.get()
     });
   });
