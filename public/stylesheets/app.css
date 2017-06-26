@@ -72,3 +72,23 @@ main ul#lists li.add-list:hover {
   cursor: pointer;
   background: rgba(0,0,0,0.3);
 }
+#card-detail {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+}
+#card-detail > div {
+  width: 730px;
+  padding: 10px;
+  margin: 50px auto;
+  background: #edeff0;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+#card-detail > div input {
+  background: #edeff0;
+  border: none;
+}

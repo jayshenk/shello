@@ -14,10 +14,10 @@ module.exports = function(router) {
     cards.push(card);
     Cards.set(cards);
     res.json(card);
-  })
+  });
 
   router.route("/cards/:id").get(function(req, res) {
-    var card = _(Cards.get()).findWhere({ id: Number(req.params.id) })
+    var card = _(Cards.get()).findWhere({ id: Number(req.params.id) });
     res.json(card);
   }).put(function(req, res) {
     var cards = Cards.get();
