@@ -36,12 +36,16 @@ body > header a.fa:hover {
 main {
   padding: 40px 10px 0 10px;
 }
-main header h2 {
+main > header {
+  position: fixed;
+}
+main > header h2 {
   padding: 10px;
   font-size: 18px;
   color: #f6f6f6;
 }
 main .container {
+  padding: 44px 0 0 0;
   white-space: nowrap;
 }
 main .container ul#lists {

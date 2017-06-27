@@ -14,7 +14,7 @@ var NewListView = Backbone.View.extend({
     var $input = this.$('input');
     var name = $input.val();
     $input.focus();
-    App.trigger('create_list', name);
+    if (name.length) { App.trigger('create_list', name); } 
   },
   destroy: function(e) {
     if (!$(e.relatedTarget).is('button')) { this.remove(); }
