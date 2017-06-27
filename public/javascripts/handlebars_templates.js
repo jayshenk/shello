@@ -1,7 +1,11 @@
 this["JST"] = this["JST"] || {};
 
+this["JST"]["addList"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<a href=\"#\" class=\"add-list\">Add a list...</a>";
+},"useData":true});
+
 this["JST"]["board"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<header><input type=\"text\" /><h1>Trello Clone</h1><a href=\"#\" class=\"fa fa-bell-o\" aria-hidden=\"true\"></a></header><main><header><h2>Board</h2></header><div class=\"container\"><ul id=\"lists\"></ul><a href=\"#\" class=\"add-list\">Add a list...</a></div></main>";
+    return "<header><input type=\"text\" /><h1>Trello Clone</h1><a href=\"#\" class=\"fa fa-bell-o\" aria-hidden=\"true\"></a></header><main><header><h2>Board</h2></header><div class=\"container\"><ul id=\"lists\"></ul></div></main>";
 },"useData":true});
 
 this["JST"]["card"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -33,9 +37,9 @@ this["JST"]["list"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":func
 
   return "<header><h3>"
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
-    + "</h3></header><ul class=\"cards\" data-list-id=\""
+    + "</h3></header><div><ul class=\"cards\" data-list-id=\""
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\"></ul>";
+    + "\"></ul></div><a href=\"#\" class=\"add-card\">Add a card...</a>";
 },"useData":true});
 
 this["JST"]["newList"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
