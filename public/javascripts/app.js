@@ -7,6 +7,15 @@ var App = {
       new CardsView({ el: this, collection: cards });
     });
   },
+  renderNewList: function() {
+    new NewListView();
+  },
+  createList: function(name) {
+    this.lists.create({
+      name: name,
+      position: this.lists.length + 1
+    });
+  },
   renderCardDetail: function(model) {
     model.fetch({
       success: function() {
@@ -16,7 +25,9 @@ var App = {
   },
   bindEvents: function() {
     _.extend(this, Backbone.Events);
-    this.on('show_card_detail', this.renderCardDetail)
+    this.on('add_list', this.renderNewList);
+    this.on('create_list', this.createList);
+    this.on('show_card_detail', this.renderCardDetail);
   },
   init: function() {
     var boardView = new BoardView();

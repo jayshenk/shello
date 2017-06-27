@@ -1,4 +1,5 @@
 @import "whitespace-reset.css"
+@import "mixins"
 
 a
   text-decoration: none
@@ -7,11 +8,13 @@ body
   font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif
   background: rgb(0, 121, 191)
   > header
+    display: flex
+    width: 100%
+    position: fixed
+    height: 40px
     padding: 8px
     background: rgba(0, 0, 0, .15)
     box-sizing: border-box
-    display: flex
-    height: 40px
     justify-content: space-between
     align-items: center
     h1
@@ -29,39 +32,112 @@ body
         background: linear-gradient(to bottom, rgba(255,255,255,.4) 0, rgba(255,255,255,.3) 100%)
 
 main
-  padding: 0 10px
+  padding: 40px 10px 0 10px
   header
     h2
       padding: 10px
       font-size: 18px
       color: #f6f6f6
-  ul#lists
-    > li
+  .container
+    white-space: nowrap
+    ul#lists
       display: inline-block
-      width: 270px
-      margin-right: 8px
       vertical-align: top
-      background: #e2e4e6
-      box-sizing: border-box
-      border-radius: 3px
-      ul.cards
-        padding: 6px
-        li
-          background: #fff
-          border-radius: 3px
-          &:hover
-            cursor: pointer
-            background: #edeff0
-          p
-            padding: 8px
-            color: #494949
-    li.add-list
+      > li
+        display: inline-block
+        width: 270px
+        margin-right: 8px
+        vertical-align: top
+        background: colors.list.bg
+        box-sizing: border-box
+        border-radius: 3px
+        ul.cards
+          padding: 6px
+          li
+            background: #fff
+            border-radius: 3px
+            &:hover
+              cursor: pointer
+              background: #edeff0
+            p
+              padding: 8px
+              color: #494949
+    .add-list
+      display: inline-block
+      position: relative
+      width: 270px
       padding: 12px
+      font-size: 14px
       color: rgba(255,255,255,.7)
       background: rgba(0,0,0,.12)
+      border-radius: 3px
+      box-sizing: border-box
       &:hover
-        cursor: pointer
         background: rgba(0,0,0,.3)
+      #new-list
+        position: absolute
+        top: 0
+        left: 0
+        width: 270px
+        padding: 4px
+        background: colors.list.bg
+        border-radius: 3px
+        box-sizing: border-box
+        &:hover
+          cursor: default
+        input
+          display: block
+          width: 100%
+          padding: 8px
+          margin: 0 0 4px 0
+          box-sizing: border-box
+          font-size: 14px
+          background: #d6d8da
+          border: 1px solid #aaa
+          border-radius: 3px
+          &:focus
+            outline: none
+        button
+          padding: 6px 18px
+          margin: 0 10px 0 0
+          color: #fff
+          font: bold 14px "Helvetica Neue", Arial, Helvetica, sans-serif
+          background: linear-gradient(to bottom, #60bc45 0, #59ab3a 100%)
+          border: none
+          border-radius: 3px
+          box-shadow: 0 1px #3f6e17
+          &:hover
+            background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%)
+            cursor: pointer
+        a.close
+          display: inline-block
+          position: relative
+          width: 18px
+          height: 18px
+          margin: 0 5px 0 0
+          vertical-align: middle
+          transform: rotate(45deg)
+          &:before,
+          &:after
+            position: absolute
+            content: ""
+            background: #999
+          &:before
+            top: 0
+            bottom: 0
+            left: 50%
+            margin-left: -1px
+            width: 2px
+          &:after
+            top: 50%
+            right: 0
+            left: 0
+            height: 2px
+            margin-top: -1px
+          &:hover
+            &:before,
+            &:after
+              background: #4d4d4d
 
 #card-detail
   position: fixed

@@ -9,5 +9,6 @@ var ListsView = Backbone.View.extend({
   },
   initialize: function() {
     this.render();
+    this.listenTo(this.collection, 'add', this.renderOne);
   }
 });

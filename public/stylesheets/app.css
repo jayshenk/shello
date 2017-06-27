@@ -7,11 +7,13 @@ body {
   background: #0079bf;
 }
 body > header {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  height: 40px;
   padding: 8px;
   background: rgba(0,0,0,0.15);
   box-sizing: border-box;
-  display: flex;
-  height: 40px;
   justify-content: space-between;
   align-items: center;
 }
@@ -32,14 +34,21 @@ body > header a.fa:hover {
   background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0, rgba(255,255,255,0.3) 100%);
 }
 main {
-  padding: 0 10px;
+  padding: 40px 10px 0 10px;
 }
 main header h2 {
   padding: 10px;
   font-size: 18px;
   color: #f6f6f6;
 }
-main ul#lists > li {
+main .container {
+  white-space: nowrap;
+}
+main .container ul#lists {
+  display: inline-block;
+  vertical-align: top;
+}
+main .container ul#lists > li {
   display: inline-block;
   width: 270px;
   margin-right: 8px;
@@ -48,29 +57,108 @@ main ul#lists > li {
   box-sizing: border-box;
   border-radius: 3px;
 }
-main ul#lists > li ul.cards {
+main .container ul#lists > li ul.cards {
   padding: 6px;
 }
-main ul#lists > li ul.cards li {
+main .container ul#lists > li ul.cards li {
   background: #fff;
   border-radius: 3px;
 }
-main ul#lists > li ul.cards li:hover {
+main .container ul#lists > li ul.cards li:hover {
   cursor: pointer;
   background: #edeff0;
 }
-main ul#lists > li ul.cards li p {
+main .container ul#lists > li ul.cards li p {
   padding: 8px;
   color: #494949;
 }
-main ul#lists li.add-list {
+main .container .add-list {
+  display: inline-block;
+  position: relative;
+  width: 270px;
   padding: 12px;
+  font-size: 14px;
   color: rgba(255,255,255,0.7);
   background: rgba(0,0,0,0.12);
+  border-radius: 3px;
+  box-sizing: border-box;
 }
-main ul#lists li.add-list:hover {
-  cursor: pointer;
+main .container .add-list:hover {
   background: rgba(0,0,0,0.3);
+}
+main .container .add-list #new-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 270px;
+  padding: 4px;
+  background: #e2e4e6;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+main .container .add-list #new-list:hover {
+  cursor: default;
+}
+main .container .add-list #new-list input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 0 0 4px 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  background: #d6d8da;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+}
+main .container .add-list #new-list input:focus {
+  outline: none;
+}
+main .container .add-list #new-list button {
+  padding: 6px 18px;
+  margin: 0 10px 0 0;
+  color: #fff;
+  font: bold 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom, #60bc45 0, #59ab3a 100%);
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 1px #3f6e17;
+}
+main .container .add-list #new-list button:hover {
+  background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%);
+  cursor: pointer;
+}
+main .container .add-list #new-list a.close {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+  transform: rotate(45deg);
+}
+main .container .add-list #new-list a.close:before,
+main .container .add-list #new-list a.close:after {
+  position: absolute;
+  content: "";
+  background: #999;
+}
+main .container .add-list #new-list a.close:before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+  width: 2px;
+}
+main .container .add-list #new-list a.close:after {
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  margin-top: -1px;
+}
+main .container .add-list #new-list a.close:hover:before,
+main .container .add-list #new-list a.close:hover:after {
+  background: #4d4d4d;
 }
 #card-detail {
   position: fixed;
