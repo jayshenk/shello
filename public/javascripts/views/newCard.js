@@ -9,18 +9,11 @@ var NewCardView = Backbone.View.extend({
   events: {
     'keypress': 'checkForSubmit',
     'blur textarea': 'destroy',
-    'submit': 'createCard'
   },
   checkForSubmit: function(e) {
     if (e.which === 13) {
       this.$el.trigger('submit');
     }
-  },
-  createCard: function(e) {
-    e.preventDefault();
-    var title = this.$('textarea').val()
-
-    this.remove();
   },
   focus: function() {
     this.$('textarea').focus();

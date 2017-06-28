@@ -8,5 +8,8 @@ var CardsView = Backbone.View.extend({
   renderOne: function(model) {
     var cardView = new CardView({ model: model });
     this.$el.append(cardView.render().el);
+  },
+  initialize: function() {
+    this.listenTo(this.collection, 'add', this.renderOne);
   }
 });

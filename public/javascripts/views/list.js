@@ -2,14 +2,22 @@ var ListView = Backbone.View.extend({
   tagName: 'li',
   template: App.templates.list,
   events: {
-    'click .add-card': 'addCard'
+    'click .add-card': 'addCard',
+    'submit': 'createCard'
   },
   addCard: function(e) {
     e.preventDefault();
-    var newCardView = new NewCardView();
-
-    this.$('.add-card').before(newCardView.render().el);
-    newCardView.focus();
+    this.newCardView = new NewCardView();
+    this.$('.add-card').before(this.newCardView.render().el);
+    this.newCardView.focus();
+  },
+  createCard: function(e) {
+    e.preventDefault();
+    this.model.cards.create({
+      title: this.$('textarea').val(),
+      listID: this.model.get('id')
+    });
+    this.newCardView.remove();
   },
   renderCards: function() {
     this.cardsView = new CardsView({ collection: this.model.cards });
