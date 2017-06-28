@@ -11,8 +11,13 @@ var ListView = Backbone.View.extend({
     this.$('.add-card').before(newCardView.render().el);
     newCardView.focus();
   },
+  renderCards: function() {
+    this.cardsView = new CardsView({ collection: this.model.cards });
+    this.$('.cards-container').append(this.cardsView.render().el);
+  },
   render: function() {
     this.$el.html(this.template(this.model.toJSON()));
+    this.renderCards();
     return this;
   }
 });

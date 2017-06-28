@@ -1,11 +1,15 @@
 var App = {
   templates: JST,
   $el: $(document.body),
-  renderCards: function() {
-    var cards = this.cards;
-    this.$el.find('ul.cards').each(function() {
-      new CardsView({ el: this, collection: cards });
-    });
+  setupLists: function() {
+    this.lists.each(this.assignCardsToList.bind(this));
+    this.renderLists();
+  },
+  assignCardsToList: function(list) {
+    list.cards = new Cards(this.cards.where({ listID: list.get('id') }));
+  },
+  renderLists: function() {
+    new ListsView({ collection: this.lists });
   },
   renderNewList: function() {
     new NewListView();
@@ -31,8 +35,7 @@ var App = {
   },
   init: function() {
     var boardView = new BoardView();
-    var listsView = new ListsView({ collection: this.lists });
-    this.renderCards();
+    this.setupLists();
     this.bindEvents();
   }
 };
