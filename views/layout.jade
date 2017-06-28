@@ -18,7 +18,6 @@ html
     +javascript_include_tag("views/cards", "views/card", "views/cardDetail")
     +javascript_include_tag("views/newList", "views/newCard")
     script.
-      App.cards = new Cards(!{JSON.stringify(cards)});
       App.lists = new Lists(!{JSON.stringify(lists)});
-      App.init();
+      App.init(!{JSON.stringify(cards)});
       $('.add-card').eq(0).trigger('click')
