@@ -42,6 +42,10 @@ this["JST"]["list"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":func
     + "\"></ul></div><a href=\"#\" class=\"add-card\">Add a card...</a>";
 },"useData":true});
 
+this["JST"]["newCard"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<fieldset><textarea id=\"title\"></textarea><button type=\"submit\">Add</button><a href=\"#\" class=\"close\"></a></fieldset>";
+},"useData":true});
+
 this["JST"]["newList"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<fieldset><input id=\"name\" type=\"text\" placeholder=\"Add a list...\" /><button type=\"submit\">Save</button><a href=\"#\" class=\"close\"></a></fieldset>";
 },"useData":true});

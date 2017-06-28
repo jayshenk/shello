@@ -3,3 +3,46 @@ colors = {
     bg: #e2e4e6
   }
 }
+
+button()
+  padding: 6px 18px
+  margin: 0 10px 0 0
+  color: #fff
+  font: bold 14px "Helvetica Neue", Arial, Helvetica, sans-serif
+  background: linear-gradient(to bottom, #60bc45 0, #59ab3a 100%)
+  border: none
+  border-radius: 3px
+  box-shadow: 0 1px #3f6e17
+  &:hover
+    background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%)
+    cursor: pointer
+
+close()
+  display: inline-block
+  position: relative
+  width: 18px
+  height: 18px
+  margin: 0 5px 0 0
+  vertical-align: middle
+  transform: rotate(45deg)
+  &:before,
+  &:after
+    position: absolute
+    content: ""
+    background: #999
+  &:before
+    top: 0
+    bottom: 0
+    left: 50%
+    margin-left: -1px
+    width: 2px
+  &:after
+    top: 50%
+    right: 0
+    left: 0
+    height: 2px
+    margin-top: -1px
+  &:hover
+    &:before,
+    &:after
+      background: #4d4d4d

@@ -104,6 +104,73 @@ main .container ul#lists > li .add-card:hover {
   background: #cdd2d4;
   border-radius: 0 0 3px 3px;
 }
+main .container ul#lists > li #new-card fieldset {
+  padding: 0 6px 6px 6px;
+}
+main .container ul#lists > li #new-card fieldset textarea {
+  width: 100%;
+  height: 60px;
+  padding: 6px;
+  margin: 0 0 4px 0;
+  font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  resize: none;
+}
+main .container ul#lists > li #new-card fieldset textarea:focus {
+  outline: none;
+}
+main .container ul#lists > li #new-card fieldset button {
+  padding: 6px 18px;
+  margin: 0 10px 0 0;
+  color: #fff;
+  font: bold 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom, #60bc45 0, #59ab3a 100%);
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 1px #3f6e17;
+}
+main .container ul#lists > li #new-card fieldset button:hover {
+  background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%);
+  cursor: pointer;
+}
+main .container ul#lists > li #new-card fieldset a.close {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+  transform: rotate(45deg);
+}
+main .container ul#lists > li #new-card fieldset a.close:before,
+main .container ul#lists > li #new-card fieldset a.close:after {
+  position: absolute;
+  content: "";
+  background: #999;
+}
+main .container ul#lists > li #new-card fieldset a.close:before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+  width: 2px;
+}
+main .container ul#lists > li #new-card fieldset a.close:after {
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  margin-top: -1px;
+}
+main .container ul#lists > li #new-card fieldset a.close:hover:before,
+main .container ul#lists > li #new-card fieldset a.close:hover:after {
+  background: #4d4d4d;
+}
+main .container ul#lists > li #new-card + .add-card {
+  display: none;
+}
 main .container ul#lists .add-list {
   flex: 0 0 270px;
   position: relative;
