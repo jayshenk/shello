@@ -1,3 +1,5 @@
 var Lists = Backbone.Collection.extend({
-  url: '/lists'
+  model: List,
+  url: '/lists',
+  comparator: 'position'
 });

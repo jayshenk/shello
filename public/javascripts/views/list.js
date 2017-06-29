@@ -1,6 +1,8 @@
 var ListView = Backbone.View.extend({
   tagName: 'li',
-  className: 'list',
+  attributes: {
+    class: 'list',
+  },
   template: App.templates.list,
   events: {
     'click .add-card': 'addCard',
@@ -28,5 +30,8 @@ var ListView = Backbone.View.extend({
     this.$el.html(this.template(this.model.toJSON()));
     this.renderCards();
     return this;
+  },
+  initialize: function() {
+    this.$el.attr('data-id', this.model.get('id'));
   }
 });

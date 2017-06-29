@@ -18,6 +18,17 @@ var ListsView = Backbone.View.extend({
         return sibling;
       }
     });
+
+    this.listsDrake.on('drop', this.saveListPositions.bind(this));
+  },
+  saveListPositions: function() {
+    var self = this;
+    this.$('.list').each(function(index) {
+      var id = $(this).data('id');
+      var list = self.collection.get(id);
+      list.set('position', index);
+      list.save();
+    });
   },
   setupCardsDrake: function() {
     this.cardsDrake = dragula($(this.$('.cards')).toArray());

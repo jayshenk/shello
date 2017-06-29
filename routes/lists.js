@@ -13,19 +13,24 @@ module.exports = function(router) {
     lists.push(list);
     Lists.set(lists);
     res.json(list);
+  });
+
+  router.route("/lists/:id").get(function(req, res) {
+    var list = _(Lists.get()).findWhere({ id: Number(req.params.id) });
+    res.json(list);
   }).put(function(req, res) {
     var lists = Lists.get();
-    var current_list = _(lists).findWhere({ id: +req.body.id });
+    var currentList = _(lists).findWhere({ id: Number(req.params.id) });
 
-    _.extend(current_list, req.body);
-    Lists.set(lists);
-    res.json(current_list);
+    _.extend(currentList, req.body);
+    Lists.update(lists);
+    res.json(currentList);
   }).delete(function(req, res) {
-    var lists = _(Lists.get()).reject(function(a) {
-      return a.id === +req.body.id;
+    var lists = _(Lists.get()).reject(function(list) {
+      return list.id === Number(req.params.id);
     });
 
-    Lists.set(lists);
+    Lists.update(lists);
     res.status(200).end();
   });
 };

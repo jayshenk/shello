@@ -16,7 +16,7 @@ var App = {
   createList: function(name) {
     this.lists.create({
       name: name,
-      position: this.lists.length + 1
+      position: this.lists.length
     });
   },
   renderCardDetail: function(model) {

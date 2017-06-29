@@ -21,6 +21,18 @@ module.exports = {
       last_id: data.id,
       data: data
     }), "utf8");
+  },
+
+  update: function(data) {
+    data.id = this.getLastID();
+    this.write(data);
+  },
+
+  write: function(data) {
+    fs.writeFileSync(file_path, JSON.stringify({
+      last_id: data.id,
+      data: data
+    }), "utf8");
   }
 };
 
