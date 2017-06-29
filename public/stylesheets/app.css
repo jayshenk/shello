@@ -1,4 +1,5 @@
 @import "whitespace-reset.css";
+@import "vendor/dragula.css";
 html {
   height: 100%;
 }
@@ -63,7 +64,7 @@ main .container ul#lists {
   flex: 0 0 auto;
   height: 100%;
 }
-main .container ul#lists > li {
+li.list {
   display: flex;
   flex-direction: column;
   flex: 0 0 270px;
@@ -74,45 +75,32 @@ main .container ul#lists > li {
   box-sizing: border-box;
   border-radius: 3px;
 }
-main .container ul#lists > li header h3 {
+li.list header h3 {
   padding: 8px 0 4px 10px;
   color: #4d4d4d;
 }
-main .container ul#lists > li div {
+li.list div {
   height: 100%;
   overflow: auto;
   box-sizing: border-box;
 }
-main .container ul#lists > li div ul.cards {
+li.list div ul.cards {
   padding: 6px 6px 0 6px;
 }
-main .container ul#lists > li div ul.cards li {
-  margin: 0 0 6px 0;
-  background: #fff;
-  border-radius: 3px;
-}
-main .container ul#lists > li div ul.cards li:hover {
-  cursor: pointer;
-  background: #edeff0;
-}
-main .container ul#lists > li div ul.cards li p {
-  padding: 8px;
-  color: #494949;
-}
-main .container ul#lists > li .add-card {
+li.list .add-card {
   padding: 10px;
   color: #8d8d8d;
 }
-main .container ul#lists > li .add-card:hover {
+li.list .add-card:hover {
   color: #504e50;
   text-decoration: underline;
   background: #cdd2d4;
   border-radius: 0 0 3px 3px;
 }
-main .container ul#lists > li #new-card fieldset {
+li.list #new-card fieldset {
   padding: 0 6px 6px 6px;
 }
-main .container ul#lists > li #new-card fieldset textarea {
+li.list #new-card fieldset textarea {
   width: 100%;
   height: 60px;
   padding: 6px;
@@ -123,10 +111,10 @@ main .container ul#lists > li #new-card fieldset textarea {
   box-sizing: border-box;
   resize: none;
 }
-main .container ul#lists > li #new-card fieldset textarea:focus {
+li.list #new-card fieldset textarea:focus {
   outline: none;
 }
-main .container ul#lists > li #new-card fieldset button {
+li.list #new-card fieldset button {
   padding: 6px 18px;
   margin: 0 10px 0 0;
   color: #fff;
@@ -136,11 +124,11 @@ main .container ul#lists > li #new-card fieldset button {
   border-radius: 3px;
   box-shadow: 0 1px #3f6e17;
 }
-main .container ul#lists > li #new-card fieldset button:hover {
+li.list #new-card fieldset button:hover {
   background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%);
   cursor: pointer;
 }
-main .container ul#lists > li #new-card fieldset a.close {
+li.list #new-card fieldset a.close {
   display: inline-block;
   position: relative;
   width: 18px;
@@ -149,34 +137,48 @@ main .container ul#lists > li #new-card fieldset a.close {
   vertical-align: middle;
   transform: rotate(45deg);
 }
-main .container ul#lists > li #new-card fieldset a.close:before,
-main .container ul#lists > li #new-card fieldset a.close:after {
+li.list #new-card fieldset a.close:before,
+li.list #new-card fieldset a.close:after {
   position: absolute;
   content: "";
   background: #999;
 }
-main .container ul#lists > li #new-card fieldset a.close:before {
+li.list #new-card fieldset a.close:before {
   top: 0;
   bottom: 0;
   left: 50%;
   margin-left: -1px;
   width: 2px;
 }
-main .container ul#lists > li #new-card fieldset a.close:after {
+li.list #new-card fieldset a.close:after {
   top: 50%;
   right: 0;
   left: 0;
   height: 2px;
   margin-top: -1px;
 }
-main .container ul#lists > li #new-card fieldset a.close:hover:before,
-main .container ul#lists > li #new-card fieldset a.close:hover:after {
+li.list #new-card fieldset a.close:hover:before,
+li.list #new-card fieldset a.close:hover:after {
   background: #4d4d4d;
 }
-main .container ul#lists > li #new-card + .add-card {
+li.list #new-card + .add-card {
   display: none;
 }
-main .container ul#lists .add-list {
+li.card {
+  margin: 0 0 6px 0;
+  background: #fff;
+  border-radius: 3px;
+  list-style: none;
+}
+li.card:hover {
+  cursor: pointer;
+  background: #edeff0;
+}
+li.card p {
+  padding: 8px;
+  color: #494949;
+}
+.add-list {
   flex: 0 0 270px;
   position: relative;
   padding: 12px;
@@ -186,10 +188,10 @@ main .container ul#lists .add-list {
   border-radius: 3px;
   box-sizing: border-box;
 }
-main .container ul#lists .add-list:hover {
+.add-list:hover {
   background: rgba(0,0,0,0.3);
 }
-main .container ul#lists .add-list #new-list {
+.add-list #new-list {
   position: absolute;
   top: 0;
   left: 0;
@@ -199,10 +201,10 @@ main .container ul#lists .add-list #new-list {
   border-radius: 3px;
   box-sizing: border-box;
 }
-main .container ul#lists .add-list #new-list:hover {
+.add-list #new-list:hover {
   cursor: default;
 }
-main .container ul#lists .add-list #new-list input {
+.add-list #new-list input {
   display: block;
   width: 100%;
   padding: 8px;
@@ -213,10 +215,10 @@ main .container ul#lists .add-list #new-list input {
   border: 1px solid #aaa;
   border-radius: 3px;
 }
-main .container ul#lists .add-list #new-list input:focus {
+.add-list #new-list input:focus {
   outline: none;
 }
-main .container ul#lists .add-list #new-list button {
+.add-list #new-list button {
   padding: 6px 18px;
   margin: 0 10px 0 0;
   color: #fff;
@@ -226,11 +228,11 @@ main .container ul#lists .add-list #new-list button {
   border-radius: 3px;
   box-shadow: 0 1px #3f6e17;
 }
-main .container ul#lists .add-list #new-list button:hover {
+.add-list #new-list button:hover {
   background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%);
   cursor: pointer;
 }
-main .container ul#lists .add-list #new-list a.close {
+.add-list #new-list a.close {
   display: inline-block;
   position: relative;
   width: 18px;
@@ -239,28 +241,28 @@ main .container ul#lists .add-list #new-list a.close {
   vertical-align: middle;
   transform: rotate(45deg);
 }
-main .container ul#lists .add-list #new-list a.close:before,
-main .container ul#lists .add-list #new-list a.close:after {
+.add-list #new-list a.close:before,
+.add-list #new-list a.close:after {
   position: absolute;
   content: "";
   background: #999;
 }
-main .container ul#lists .add-list #new-list a.close:before {
+.add-list #new-list a.close:before {
   top: 0;
   bottom: 0;
   left: 50%;
   margin-left: -1px;
   width: 2px;
 }
-main .container ul#lists .add-list #new-list a.close:after {
+.add-list #new-list a.close:after {
   top: 50%;
   right: 0;
   left: 0;
   height: 2px;
   margin-top: -1px;
 }
-main .container ul#lists .add-list #new-list a.close:hover:before,
-main .container ul#lists .add-list #new-list a.close:hover:after {
+.add-list #new-list a.close:hover:before,
+.add-list #new-list a.close:hover:after {
   background: #4d4d4d;
 }
 #card-detail {
@@ -282,4 +284,9 @@ main .container ul#lists .add-list #new-list a.close:hover:after {
 #card-detail > div input {
   background: #edeff0;
   border: none;
+}
+.gu-mirror {
+  transform: rotate(4deg);
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
 }

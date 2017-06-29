@@ -8,6 +8,20 @@ var ListsView = Backbone.View.extend({
     e.preventDefault();
     App.trigger('add_list');
   },
+  setupListsDrake: function() {
+    this.drake = dragula([this.el], {
+      invalid: function(el, handle) {
+        var $el = $(el);
+        return $el.is('a') || $el.is('.cards-container');
+      },
+      accepts: function(el, target, source, sibling) {
+        return sibling;
+      }
+    });
+  },
+  setupCardsDrake: function() {
+    this.drake = dragula($(this.$('.cards')).toArray());
+  },
   render: function() {
     this.$el.append(this.addListTemplate());
     this.collection.each(this.renderOne.bind(this));
@@ -18,6 +32,8 @@ var ListsView = Backbone.View.extend({
   },
   initialize: function() {
     this.render();
+    this.setupListsDrake();
+    this.setupCardsDrake();
     this.listenTo(this.collection, 'add', this.renderOne);
   }
 });

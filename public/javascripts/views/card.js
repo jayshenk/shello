@@ -1,5 +1,6 @@
 var CardView = Backbone.View.extend({
   tagName: 'li',
+  className: 'card',
   template: App.templates.card,
   events: {
     'click': 'showDetail'
