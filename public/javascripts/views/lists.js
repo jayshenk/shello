@@ -9,7 +9,7 @@ var ListsView = Backbone.View.extend({
     App.trigger('add_list');
   },
   setupListsDrake: function() {
-    this.drake = dragula([this.el], {
+    this.listsDrake = dragula([this.el], {
       invalid: function(el, handle) {
         var $el = $(el);
         return $el.is('a') || $el.is('.cards-container');
@@ -20,7 +20,7 @@ var ListsView = Backbone.View.extend({
     });
   },
   setupCardsDrake: function() {
-    this.drake = dragula($(this.$('.cards')).toArray());
+    this.cardsDrake = dragula($(this.$('.cards')).toArray());
   },
   render: function() {
     this.$el.append(this.addListTemplate());
