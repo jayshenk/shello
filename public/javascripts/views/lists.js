@@ -27,11 +27,34 @@ var ListsView = Backbone.View.extend({
       var id = $(this).data('id');
       var list = self.collection.get(id);
       list.set('position', index);
-      list.save();
+      list.trigger('position_updated');
     });
+  },
+  saveCardPositions: function(el, target, source) {
+    var cardID = $(el).data('id');
+    if (target !== source) {
+      this.moveCard(cardID, target, source);
+    }
+    _([target, source]).uniq().forEach(function(el) {
+      var listID = $(el).closest('.list').data('id');
+      var list = this.collection.get(listID);
+      list.trigger('update_card_positions');
+    }, this);
+  },
+  moveCard: function(cardID, target, source) {
+    var sourceID = $(source).closest('.list').data('id');
+    var targetID = $(target).closest('.list').data('id');
+    var sourceList = this.collection.get(sourceID);
+    var targetList = this.collection.get(targetID);
+    var card = sourceList.cards.remove(cardID);
+
+    targetList.cards.add(card, { silent: true });
+    card.set('listID', targetID);
+    card.save();
   },
   setupCardsDrake: function() {
     this.cardsDrake = dragula($(this.$('.cards')).toArray());
+    this.cardsDrake.on('drop', this.saveCardPositions.bind(this));
   },
   render: function() {
     this.$el.append(this.addListTemplate());

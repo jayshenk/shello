@@ -1,4 +1,5 @@
 var Cards = Backbone.Collection.extend({
   model: Card,
-  url: '/cards'
+  url: '/cards',
+  comparator: 'position'
 });

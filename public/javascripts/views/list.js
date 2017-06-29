@@ -22,6 +22,9 @@ var ListView = Backbone.View.extend({
     });
     this.newCardView.remove();
   },
+  updateCardPositions: function() {
+    this.cardsView.trigger('update_positions');
+  },
   renderCards: function() {
     this.cardsView = new CardsView({ collection: this.model.cards });
     this.$('.cards-container').append(this.cardsView.render().el);
@@ -33,5 +36,6 @@ var ListView = Backbone.View.extend({
   },
   initialize: function() {
     this.$el.attr('data-id', this.model.get('id'));
+    this.listenTo(this.model, 'update_card_positions', this.updateCardPositions);
   }
 });
