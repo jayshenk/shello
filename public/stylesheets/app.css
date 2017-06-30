@@ -19,14 +19,38 @@ body > header {
   padding: 8px;
   background: rgba(0,0,0,0.15);
   box-sizing: border-box;
-  justify-content: space-between;
   align-items: center;
 }
-body > header h1 {
+body > header #search input {
+  width: 180px;
+  height: 30px;
+  position: relative;
+  padding: 0 8px;
+  background: #4b96c1;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+body > header #search input:hover {
+  background: #65a5c9;
+}
+body > header #search .fa-search {
+  position: relative;
+  left: -22px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+body > header .col {
+  flex: 1 1 auto;
+}
+body > header .col h1 {
+  text-align: center;
   font-size: 18px;
   color: #f6f6f6;
 }
-body > header a.fa {
+body > header .col a.fa {
+  float: right;
   width: 30px;
   font-size: 18px;
   line-height: 30px;
@@ -35,7 +59,7 @@ body > header a.fa {
   background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0, rgba(255,255,255,0.2) 100%);
   border-radius: 5px;
 }
-body > header a.fa:hover {
+body > header .col a.fa:hover {
   background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0, rgba(255,255,255,0.3) 100%);
 }
 main {

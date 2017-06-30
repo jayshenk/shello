@@ -5,7 +5,7 @@ this["JST"]["addList"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":f
 },"useData":true});
 
 this["JST"]["board"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<header><input type=\"text\" /><h1>Trello Clone</h1><a href=\"#\" class=\"fa fa-bell-o\" aria-hidden=\"true\"></a></header><main><header><h2>Board</h2></header><div class=\"container\"><ul id=\"lists\"></ul></div></main>";
+    return "<header><div id=\"search\" class=\"col\"><input type=\"text\" /><i class=\"fa fa-search fa-flip-horizontal\" aria-hidden=\"true\"></i></div><div class=\"col\"><h1>Trello Clone</h1></div><div class=\"col\"><a href=\"#\" class=\"fa fa-bell-o\" aria-hidden=\"true\"></a></div></header><main><header><h2>Board</h2></header><div class=\"container\"><ul id=\"lists\"></ul></div></main>";
 },"useData":true});
 
 this["JST"]["card"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -46,4 +46,12 @@ this["JST"]["newCard"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":f
 
 this["JST"]["newList"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<fieldset><input id=\"name\" type=\"text\" placeholder=\"Add a list...\" /><button type=\"submit\">Save</button><a href=\"#\" class=\"close\"></a></fieldset>";
+},"useData":true});
+
+this["JST"]["search"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<section id=\"results\"></section>";
+},"useData":true});
+
+this["JST"]["searchResults"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<section id=\"results\"></section>";
 },"useData":true});

@@ -1,8 +1,6 @@
 var ListView = Backbone.View.extend({
   tagName: 'li',
-  attributes: {
-    class: 'list',
-  },
+  className: 'list',
   template: App.templates.list,
   events: {
     'click .add-card': 'addCard',
