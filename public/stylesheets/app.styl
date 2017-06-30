@@ -21,30 +21,58 @@ body
     background: rgba(0, 0, 0, .15)
     box-sizing: border-box
     align-items: center
+    z-index: 2
     #search
+      flex: 3 3 0
+      position: relative
       input
         width: 180px
         height: 30px
-        position: relative
         padding: 0 8px
+        font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif
         background: #4b96c1
         border: none;
         border-radius: 3px
         box-sizing: border-box
+        .close
+          display: none
         &:hover
           background: #65a5c9
+        &:focus
+          outline: none
       .fa-search
         position: relative
         left: -22px
         font-size: 16px
         color: #fff
         cursor: pointer
-    .col
-      flex: 1 1 auto;
+      &.active
+        input
+          width: 380px
+          background: #fff
+        .fa-search
+          display: none
+        .close
+          close()
+          width: 16px
+          height: 16px
+          margin-left: -24px
+      #results
+        position: absolute
+        top: 38px
+        padding: 8px
+        border-radius: 3px
+        background: #edeff0
+        h1
+          font-size: 17px
+    .heading
+      flex: 1 1 0
       h1
         text-align: center
         font-size: 18px
         color: #f6f6f6
+    #notifications
+      flex: 3 3 0
       a.fa
         float: right
         width: 30px

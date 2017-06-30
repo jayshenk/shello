@@ -20,19 +20,30 @@ body > header {
   background: rgba(0,0,0,0.15);
   box-sizing: border-box;
   align-items: center;
+  z-index: 2;
+}
+body > header #search {
+  flex: 3 3 0;
+  position: relative;
 }
 body > header #search input {
   width: 180px;
   height: 30px;
-  position: relative;
   padding: 0 8px;
+  font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
   background: #4b96c1;
   border: none;
   border-radius: 3px;
   box-sizing: border-box;
 }
+body > header #search input .close {
+  display: none;
+}
 body > header #search input:hover {
   background: #65a5c9;
+}
+body > header #search input:focus {
+  outline: none;
 }
 body > header #search .fa-search {
   position: relative;
@@ -41,15 +52,71 @@ body > header #search .fa-search {
   color: #fff;
   cursor: pointer;
 }
-body > header .col {
-  flex: 1 1 auto;
+body > header #search.active input {
+  width: 380px;
+  background: #fff;
 }
-body > header .col h1 {
+body > header #search.active .fa-search {
+  display: none;
+}
+body > header #search.active .close {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+  transform: rotate(45deg);
+  width: 16px;
+  height: 16px;
+  margin-left: -24px;
+}
+body > header #search.active .close:before,
+body > header #search.active .close:after {
+  position: absolute;
+  content: "";
+  background: #999;
+}
+body > header #search.active .close:before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+  width: 2px;
+}
+body > header #search.active .close:after {
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  margin-top: -1px;
+}
+body > header #search.active .close:hover:before,
+body > header #search.active .close:hover:after {
+  background: #4d4d4d;
+}
+body > header #search #results {
+  position: absolute;
+  top: 38px;
+  padding: 8px;
+  border-radius: 3px;
+  background: #edeff0;
+}
+body > header #search #results h1 {
+  font-size: 17px;
+}
+body > header .heading {
+  flex: 1 1 0;
+}
+body > header .heading h1 {
   text-align: center;
   font-size: 18px;
   color: #f6f6f6;
 }
-body > header .col a.fa {
+body > header #notifications {
+  flex: 3 3 0;
+}
+body > header #notifications a.fa {
   float: right;
   width: 30px;
   font-size: 18px;
@@ -59,7 +126,7 @@ body > header .col a.fa {
   background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0, rgba(255,255,255,0.2) 100%);
   border-radius: 5px;
 }
-body > header .col a.fa:hover {
+body > header #notifications a.fa:hover {
   background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0, rgba(255,255,255,0.3) 100%);
 }
 main {
