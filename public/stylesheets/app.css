@@ -98,12 +98,22 @@ body > header #search.active .close:hover:after {
 body > header #search #results {
   position: absolute;
   top: 38px;
-  padding: 8px;
+  width: 600px;
+  min-height: 180px;
+  padding: 10px;
   border-radius: 3px;
+  box-sizing: border-box;
   background: #edeff0;
 }
 body > header #search #results h1 {
+  padding: 0 0 10px 0;
   font-size: 17px;
+}
+body > header #search #results #search-cards {
+  width: 180px;
+}
+body > header #search #results #search-cards .card:hover {
+  background: #fff;
 }
 body > header .heading {
   flex: 1 1 0;
@@ -363,6 +373,7 @@ li.card p {
   bottom: 0;
   left: 0;
   background: rgba(0,0,0,0.5);
+  z-index: 3;
 }
 #card-detail > div {
   width: 730px;

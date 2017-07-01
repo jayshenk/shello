@@ -6,11 +6,12 @@ var BoardView = Backbone.View.extend({
     'click': 'removeSearch'
   },
   renderSearch: function() {
-    this.searchView.render();
+    this.searchView = this.searchView || (new SearchView());
   },
   removeSearch: function(e) {
-    if (!$(e.target).closest('#search').length) {
+    if (this.searchView && !$(e.target).closest('#search').length) {
       this.searchView.destroy();
+      this.searchView = null;
     }
   },
   render: function() {
@@ -18,6 +19,5 @@ var BoardView = Backbone.View.extend({
   },
   initialize: function() {
     this.render();
-    this.searchView = new SearchView();
   }
 });

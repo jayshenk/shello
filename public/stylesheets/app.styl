@@ -60,11 +60,20 @@ body
       #results
         position: absolute
         top: 38px
-        padding: 8px
+        width: 600px
+        min-height: 180px
+        padding: 10px
         border-radius: 3px
+        box-sizing: border-box
         background: #edeff0
         h1
+          padding: 0 0 10px 0
           font-size: 17px
+        #search-cards
+          width: 180px
+          .card
+            &:hover
+              background: #fff
     .heading
       flex: 1 1 0
       h1
@@ -215,6 +224,7 @@ li.card
   bottom: 0
   left: 0
   background: rgba(0, 0, 0, .5)
+  z-index: 3
   > div
     width: 730px
     padding: 10px
