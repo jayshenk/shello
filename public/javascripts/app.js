@@ -26,11 +26,16 @@ var App = {
       }
     });
   },
+  editCard: function(model, offset) {
+    var editCardView = new EditCardView({ model: model });
+    editCardView.render(offset);
+  },
   bindEvents: function() {
     _.extend(this, Backbone.Events);
     this.on('add_list', this.renderNewList);
     this.on('create_list', this.createList);
     this.on('show_card_detail', this.renderCardDetail);
+    this.on('edit_card', this.editCard);
   },
   init: function(cardsJSON) {
     this.boardView = new BoardView();

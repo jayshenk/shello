@@ -266,6 +266,7 @@ li.list #new-card + .add-card {
   display: none;
 }
 li.card {
+  position: relative;
   margin: 0 0 6px 0;
   background: #fff;
   border-radius: 3px;
@@ -275,9 +276,28 @@ li.card:hover {
   cursor: pointer;
   background: #edeff0;
 }
+li.card:hover i.fa-pencil {
+  display: block;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #aaa;
+  border-radius: 3px;
+  background: rgba(237,239,240,0.8);
+}
+li.card:hover i.fa-pencil:hover {
+  color: #4d4d4d;
+  background: #d6dadc;
+}
 li.card p {
   padding: 8px;
   color: #494949;
+}
+li.card i.fa-pencil {
+  display: none;
 }
 .add-list {
   flex: 0 0 270px;
@@ -365,6 +385,48 @@ li.card p {
 .add-list #new-list a.close:hover:before,
 .add-list #new-list a.close:hover:after {
   background: #4d4d4d;
+}
+#edit-card {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 3;
+}
+#edit-card fieldset {
+  width: 258px;
+}
+#edit-card textarea {
+  width: 100%;
+  min-height: 136px;
+  padding: 8px;
+  margin: 0 0 10px 0;
+  font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #4d4d4d;
+  resize: none;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+#edit-card textarea:focus {
+  outline: none;
+}
+#edit-card button {
+  padding: 6px 18px;
+  margin: 0 10px 0 0;
+  color: #fff;
+  font: bold 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom, #60bc45 0, #59ab3a 100%);
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 1px #3f6e17;
+  padding: 10px 26px;
+}
+#edit-card button:hover {
+  background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%);
+  cursor: pointer;
 }
 #card-detail {
   position: fixed;

@@ -167,6 +167,7 @@ li.list
       display: none
 
 li.card
+  position: relative
   margin: 0 0 6px 0
   background: #fff
   border-radius: 3px
@@ -174,9 +175,25 @@ li.card
   &:hover
     cursor: pointer
     background: #edeff0
+    i.fa-pencil
+      display: block
+      position: absolute
+      top: 4px
+      right: 4px
+      width: 24px
+      line-height: 24px
+      text-align: center
+      color: #aaa
+      border-radius: 3px
+      background: rgba(237,239,240,.8)
+      &:hover
+        color: #4d4d4d
+        background: #d6dadc
   p
     padding: 8px
     color: #494949
+  i.fa-pencil
+    display: none
 
 .add-list
   flex: 0 0 270px
@@ -216,6 +233,33 @@ li.card
       button()
     a.close
       close()
+
+#edit-card
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: rgba(0, 0, 0, .5)
+  z-index: 3
+  fieldset
+      width: 258px
+    textarea
+      width: 100%
+      min-height: 136px
+      padding: 8px
+      margin: 0 0 10px 0
+      font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif
+      color: #4d4d4d
+      resize: none
+      border: none
+      border-radius: 3px
+      box-sizing: border-box
+      &:focus
+        outline: none
+    button
+      button()
+      padding: 10px 26px
 
 #card-detail
   position: fixed
