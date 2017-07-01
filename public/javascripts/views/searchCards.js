@@ -8,7 +8,6 @@ var SearchCardsView = Backbone.View.extend({
     var $el = $(e.currentTarget);
     var cardID = $el.data('id');
     var listID = $el.data('list-id');
-    console.log(listID);
     var card = App.lists.get(listID).cards.get(cardID);
 
     App.trigger('show_card_detail', card);

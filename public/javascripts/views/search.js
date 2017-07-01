@@ -27,8 +27,6 @@ var SearchView = Backbone.View.extend({
   },
   close: function(e) {
     e.preventDefault();
-    e.stopPropagation();
-    this.destroy();
   },
   destroy: function() {
     this.$el.removeClass('active');
