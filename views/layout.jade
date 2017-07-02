@@ -13,11 +13,12 @@ html
 
     +javascript_include_tag("app")
     +javascript_include_tag("models/card", "models/list")
-    +javascript_include_tag("collections/cards", "collections/lists")
+    +javascript_include_tag("collections/cards", "collections/lists", "collections/comments")
     +javascript_include_tag("views/board", "views/lists", "views/list")
     +javascript_include_tag("views/cards", "views/card", "views/cardDetail")
     +javascript_include_tag("views/newList", "views/newCard", "views/search")
     +javascript_include_tag("views/searchCards", "views/editCard", "views/cardDescription")
+    +javascript_include_tag("views/comments", "views/comment")
     script.
       App.lists = new Lists(!{JSON.stringify(lists)});
       App.init(!{JSON.stringify(cards)});

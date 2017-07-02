@@ -35,7 +35,19 @@ this["JST"]["cardDetail"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main
 
   return "<div class=\"modal\"><input type=\"text\" id=\"title\" value=\""
     + container.escapeExpression(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"title","hash":{},"data":data}) : helper)))
-    + "\" /><section id=\"description\"></section></div>";
+    + "\" /><section id=\"description\"></section><section id=\"comments\"></section></div>";
+},"useData":true});
+
+this["JST"]["comment"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper;
+
+  return "<h3>User</h3><p>"
+    + container.escapeExpression(((helper = (helper = helpers.body || (depth0 != null ? depth0.body : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"body","hash":{},"data":data}) : helper)))
+    + "</p>";
+},"useData":true});
+
+this["JST"]["comments"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<form action=\"#\" method=\"post\"><dl><dt><label>Add Comment</label></dt><dd><textarea placeholder=\"Write a comment...\"></textarea></dd></dl><button type=\"submit\" disabled>Save</button></form><h2>Activity</h2><ul></ul>";
 },"useData":true});
 
 this["JST"]["editCard"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {

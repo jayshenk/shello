@@ -272,6 +272,8 @@ li.card
   > div
     width: 730px
     padding: 10px 46px
+    color: #4d4d4d
+    font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif
     margin: 50px auto
     background: #edeff0
     border-radius: 3px
@@ -315,7 +317,7 @@ li.card
               min-height: 100px
               padding: 8px
               margin: 0 0 2px 0
-              resize: none;
+              resize: none
               font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif
               color: #504e50
               background: #e6e8e8
@@ -328,6 +330,53 @@ li.card
               button()
             a.close
               close()
+    #comments
+      form
+        padding: 0 0 30px 0
+        dl
+          dt
+            padding: 0 0 10px 0
+            label
+              font-size: 16px
+              font-weight: bold
+          dd
+            textarea
+              width: 100%
+              min-height: 74px
+              padding: 8px
+              margin: 0 0 6px 0
+              font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif
+              resize: none
+              background: #fff
+              border: 1px solid #c3c5c6
+              border-radius: 3px
+              box-sizing: border-box
+              &:focus
+                outline: none
+        button
+          button();
+          padding: 10px 18px
+          &:disabled
+            color: #8c8c8c
+            font-weight: normal
+            background: #e2e4e6
+            box-shadow: none
+            cursor: auto
+      h2
+        padding: 0 0 12px 0
+        font-size: 16px
+      ul
+        li
+          padding: 8px 0
+          border-bottom: 1px solid #e2e4e6
+          h3
+            padding: 0 0 6px 0
+          p
+            display: inline-block
+            padding: 10px
+            background: #fff
+            border: 1px solid #e9ebec
+            border-radius: 3px
 
 .gu-mirror
   transform: rotate(4deg)

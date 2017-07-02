@@ -16,8 +16,19 @@ var CardDetailView = Backbone.View.extend({
     this.$el.html(this.template(this.model.toJSON()));
     App.$el.append(this.el);
   },
+  renderDescription: function() {
+    new CardDescriptionView({ model: this.model });
+  },
+  renderComments: function() {
+    this.model.comments.fetch({
+      success: function() {
+        new CommentsView({ collection: this.model.comments });
+      }.bind(this)
+    });
+  },
   initialize: function() {
     this.render();
-    new CardDescriptionView({ model: this.model });
+    this.renderDescription();
+    this.renderComments();
   }
 });
