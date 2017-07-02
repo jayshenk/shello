@@ -5,6 +5,7 @@ var CardDescriptionView = Backbone.View.extend({
   events: {
     'click .edit': 'edit',
     'click .close': 'cancelEdit',
+    'blur textarea': 'cancelEdit',
     'submit': 'update'
   },
   edit: function(e) {

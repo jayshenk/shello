@@ -10,7 +10,7 @@ var CardDetailView = Backbone.View.extend({
     this.model.trigger('update_title', title);
   },
   destroy: function(e) {
-    if ($(e.target).attr('id') === 'card-detail') {
+    if (!$(e.target).closest('.modal').length) {
       this.remove();
     }
   },
