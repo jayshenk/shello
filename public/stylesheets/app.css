@@ -439,15 +439,115 @@ li.card i.fa-pencil {
 }
 #card-detail > div {
   width: 730px;
-  padding: 10px;
+  padding: 10px 46px;
   margin: 50px auto;
   background: #edeff0;
   border-radius: 3px;
   box-sizing: border-box;
 }
 #card-detail > div input {
+  width: 100%;
+  padding: 4px;
+  font: bold 18px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #4d4d4d;
   background: #edeff0;
   border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+#card-detail > div input:focus {
+  background: #fff;
+  outline: none;
+}
+#card-detail > div #description {
+  padding: 20px 0 34px 0;
+}
+#card-detail > div #description a.edit {
+  padding: 0 0 0 6px;
+  color: #8c8c8c;
+  text-decoration: underline;
+}
+#card-detail > div #description a.edit:hover {
+  color: #101010;
+}
+#card-detail > div #description > a.edit {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border-radius: 3px;
+}
+#card-detail > div #description > a.edit:hover {
+  background: rgba(0,0,0,0.1);
+}
+#card-detail > div #description dl dt {
+  padding: 0 0 8px 0;
+  color: #8c8c8c;
+}
+#card-detail > div #description dl dd {
+  color: #505050;
+}
+#card-detail > div #description dl dd form textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 8px;
+  margin: 0 0 2px 0;
+  resize: none;
+  font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #504e50;
+  background: #e6e8e8;
+  border: 1px solid #c3c5c6;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+#card-detail > div #description dl dd form textarea:focus {
+  outline: none;
+}
+#card-detail > div #description dl dd form button {
+  padding: 6px 18px;
+  margin: 0 10px 0 0;
+  color: #fff;
+  font: bold 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom, #60bc45 0, #59ab3a 100%);
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 1px #3f6e17;
+}
+#card-detail > div #description dl dd form button:hover {
+  background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%);
+  cursor: pointer;
+}
+#card-detail > div #description dl dd form a.close {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+  transform: rotate(45deg);
+}
+#card-detail > div #description dl dd form a.close:before,
+#card-detail > div #description dl dd form a.close:after {
+  position: absolute;
+  content: "";
+  background: #999;
+}
+#card-detail > div #description dl dd form a.close:before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+  width: 2px;
+}
+#card-detail > div #description dl dd form a.close:after {
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  margin-top: -1px;
+}
+#card-detail > div #description dl dd form a.close:hover:before,
+#card-detail > div #description dl dd form a.close:hover:after {
+  background: #4d4d4d;
 }
 .gu-mirror {
   transform: rotate(4deg);

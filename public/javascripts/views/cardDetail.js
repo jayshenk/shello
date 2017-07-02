@@ -2,7 +2,12 @@ var CardDetailView = Backbone.View.extend({
   id: 'card-detail',
   template: App.templates.cardDetail,
   events: {
+    'blur #title': 'updateTitle',
     'click': 'destroy'
+  },
+  updateTitle: function() {
+    var title = this.$('#title').val();
+    this.model.trigger('update_title', title);
   },
   destroy: function(e) {
     if ($(e.target).attr('id') === 'card-detail') {
@@ -15,5 +20,6 @@ var CardDetailView = Backbone.View.extend({
   },
   initialize: function() {
     this.render();
+    new CardDescriptionView({ model: this.model });
   }
 });

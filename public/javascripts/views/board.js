@@ -10,7 +10,7 @@ var BoardView = Backbone.View.extend({
   },
   removeSearch: function(e) {
     var $el = $(e.target);
-    if (this.searchView && !$el.closest('#search').length || $el.is('.close')) {
+    if (this.searchView && !$el.closest('#search').length || $el.is('#search .close')) {
       this.searchView.destroy();
       this.searchView = null;
     }

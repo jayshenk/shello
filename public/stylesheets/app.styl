@@ -271,14 +271,63 @@ li.card
   z-index: 3
   > div
     width: 730px
-    padding: 10px
+    padding: 10px 46px
     margin: 50px auto
     background: #edeff0
     border-radius: 3px
     box-sizing: border-box
     input
+      width: 100%
+      padding: 4px
+      font: bold 18px "Helvetica Neue", Arial, Helvetica, sans-serif
+      color: #4d4d4d
       background: #edeff0
       border: none
+      border-radius: 3px
+      box-sizing: border-box
+      &:focus
+        background: #fff
+        outline: none;
+    #description
+      padding: 20px 0 34px 0
+      a.edit
+        padding: 0 0 0 6px
+        color: #8c8c8c
+        text-decoration: underline
+        &:hover
+          color: #101010
+      > a.edit
+        display: block
+        width: 100%
+        padding: 8px
+        border-radius: 3px
+        &:hover
+          background: rgba(0,0,0,.1)
+      dl
+        dt
+          padding: 0 0 8px 0
+          color: #8c8c8c
+        dd
+          color: #505050
+          form
+            textarea
+              width: 100%
+              min-height: 100px
+              padding: 8px
+              margin: 0 0 2px 0
+              resize: none;
+              font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif
+              color: #504e50
+              background: #e6e8e8
+              border: 1px solid #c3c5c6
+              border-radius: 3px
+              box-sizing: border-box
+              &:focus
+                outline: none
+            button
+              button()
+            a.close
+              close()
 
 .gu-mirror
   transform: rotate(4deg)
