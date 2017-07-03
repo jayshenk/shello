@@ -3,6 +3,7 @@ var CardDetailView = Backbone.View.extend({
   template: App.templates.cardDetail,
   events: {
     'blur #title': 'updateTitle',
+    'click a.move': 'renderMove',
     'click': 'destroy'
   },
   updateTitle: function() {
@@ -25,6 +26,12 @@ var CardDetailView = Backbone.View.extend({
         new CommentsView({ collection: this.model.comments });
       }.bind(this)
     });
+  },
+  renderMove: function(e) {
+    e.preventDefault();
+    var offset = $(e.target).offset();
+    var moveCardView = new MoveCardView({ model: this.model });
+    moveCardView.render(offset);
   },
   initialize: function() {
     this.render();

@@ -269,15 +269,22 @@ li.card
   left: 0
   background: rgba(0, 0, 0, .5)
   z-index: 3
-  > div
+  > .modal
     width: 730px
-    padding: 10px 46px
+    padding: 10px 14px 20px 46px
     color: #4d4d4d
     font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif
     margin: 50px auto
     background: #edeff0
     border-radius: 3px
     box-sizing: border-box
+    .col
+      display: inline-block
+      vertical-align: top
+    .details
+      width: 75%
+      padding: 0 20px 0 0
+      box-sizing: border-box
     input
       width: 100%
       padding: 4px
@@ -377,6 +384,88 @@ li.card
             background: #fff
             border: 1px solid #e9ebec
             border-radius: 3px
+    .actions
+      width: 25%
+      section
+        padding: 20px 0 0 0
+        h2
+          padding: 0 0 6px 0
+          font-size: 16px
+        ul
+          li
+            a
+              display: block
+              padding: 10px
+              color: #444
+              font-weight: bold
+              background: #fbfcfc
+              border: 1px solid #e2e4e6
+              border-radius: 3px
+              &:hover
+                color: #fff
+                background: #2491cc
+                i
+                  color: #fff
+              i
+                padding: 0 6px 0 0
+                color: #999
+
+.modal-backdrop
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: transparent
+  z-index: 4
+
+.actions-modal
+  width: 300px
+  padding: 10px
+  background: #fff
+  border: 1px solid #d6dadc
+  border-radius: 3px
+  box-sizing: border-box
+  header
+    text-align: center
+    border-bottom: 1px solid #d6dadc
+    margin: 0 0 6px 0
+    h1
+      display: inline-block
+      padding: 0 0 10px 0
+      font-weight: normal
+      color: #8c8c8c
+    a.close
+      close()
+      float: right
+      width: 12px
+      height: 12px
+      margin-top: 2px
+  form
+    fieldset
+      div
+        float: left
+        width: 190px
+        label
+          display: block
+          padding: 0 0 4px 4px
+          color: #8c8c8c
+        select
+          -webkit-appearance: none
+          -moz-appearance: none
+          appearance: none
+          width: 100%
+          padding: 8px
+          font: bold 18px "Helvetica Neue", Arial, Helvetica, sans-serif
+          color: #4d4d4d
+          box-sizing: border-box
+          border: 1px solid #e2e4e6
+          background: linear-gradient(to bottom, #fff 0, #f8f9f9 100%)
+          &:focus
+            outline: none
+        + div
+          float: right
+          width: 74px
 
 .gu-mirror
   transform: rotate(4deg)

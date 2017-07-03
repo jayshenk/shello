@@ -35,7 +35,7 @@ this["JST"]["cardDetail"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main
 
   return "<div class=\"modal\"><input type=\"text\" id=\"title\" value=\""
     + container.escapeExpression(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"title","hash":{},"data":data}) : helper)))
-    + "\" /><section id=\"description\"></section><section id=\"comments\"></section></div>";
+    + "\" /><div class=\"col details\"><section id=\"description\"></section><section id=\"comments\"></section></div><div class=\"col actions\"><section><h2>Actions</h2><ul><li><a href=\"#\" class=\"move\"><i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i>Move</a></li></ul></section></div></div>";
 },"useData":true});
 
 this["JST"]["comment"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -72,6 +72,10 @@ this["JST"]["list"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":func
   return "<header><h3>"
     + container.escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"name","hash":{},"data":data}) : helper)))
     + "</h3></header><div class=\"cards-container\"></div><a href=\"#\" class=\"add-card\">Add a card...</a>";
+},"useData":true});
+
+this["JST"]["moveCard"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<div class=\"actions-modal\"><header><h1>Move Card</h1><a class=\"close\"></a></header><form action=\"#\" method=\"post\"><fieldset><div><label for=\"list\">List</label><select id=\"list\"><option>Basics</option></select></div><div><label for=\"position\">Position</label><select id=\"position\"><option>1</option></select></div></fieldset></form></div>";
 },"useData":true});
 
 this["JST"]["newCard"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {

@@ -14,7 +14,7 @@ var CardsView = Backbone.View.extend({
     this.$('.card').each(function(index) {
       var id = $(this).data('id');
       var card = self.collection.get(id);
-      card.set('position', index);
+      card.set('position', index + 1);
       card.trigger('position_updated');
     });
   },

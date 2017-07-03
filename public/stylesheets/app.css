@@ -437,9 +437,9 @@ li.card i.fa-pencil {
   background: rgba(0,0,0,0.5);
   z-index: 3;
 }
-#card-detail > div {
+#card-detail > .modal {
   width: 730px;
-  padding: 10px 46px;
+  padding: 10px 14px 20px 46px;
   color: #4d4d4d;
   font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
   margin: 50px auto;
@@ -447,7 +447,16 @@ li.card i.fa-pencil {
   border-radius: 3px;
   box-sizing: border-box;
 }
-#card-detail > div input {
+#card-detail > .modal .col {
+  display: inline-block;
+  vertical-align: top;
+}
+#card-detail > .modal .details {
+  width: 75%;
+  padding: 0 20px 0 0;
+  box-sizing: border-box;
+}
+#card-detail > .modal input {
   width: 100%;
   padding: 4px;
   font: bold 18px "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -457,38 +466,38 @@ li.card i.fa-pencil {
   border-radius: 3px;
   box-sizing: border-box;
 }
-#card-detail > div input:focus {
+#card-detail > .modal input:focus {
   background: #fff;
   outline: none;
 }
-#card-detail > div #description {
+#card-detail > .modal #description {
   padding: 20px 0 34px 0;
 }
-#card-detail > div #description a.edit {
+#card-detail > .modal #description a.edit {
   padding: 0 0 0 6px;
   color: #8c8c8c;
   text-decoration: underline;
 }
-#card-detail > div #description a.edit:hover {
+#card-detail > .modal #description a.edit:hover {
   color: #101010;
 }
-#card-detail > div #description > a.edit {
+#card-detail > .modal #description > a.edit {
   display: block;
   width: 100%;
   padding: 8px;
   border-radius: 3px;
 }
-#card-detail > div #description > a.edit:hover {
+#card-detail > .modal #description > a.edit:hover {
   background: rgba(0,0,0,0.1);
 }
-#card-detail > div #description dl dt {
+#card-detail > .modal #description dl dt {
   padding: 0 0 8px 0;
   color: #8c8c8c;
 }
-#card-detail > div #description dl dd {
+#card-detail > .modal #description dl dd {
   color: #505050;
 }
-#card-detail > div #description dl dd form textarea {
+#card-detail > .modal #description dl dd form textarea {
   width: 100%;
   min-height: 100px;
   padding: 8px;
@@ -501,10 +510,10 @@ li.card i.fa-pencil {
   border-radius: 3px;
   box-sizing: border-box;
 }
-#card-detail > div #description dl dd form textarea:focus {
+#card-detail > .modal #description dl dd form textarea:focus {
   outline: none;
 }
-#card-detail > div #description dl dd form button {
+#card-detail > .modal #description dl dd form button {
   padding: 6px 18px;
   margin: 0 10px 0 0;
   color: #fff;
@@ -514,11 +523,11 @@ li.card i.fa-pencil {
   border-radius: 3px;
   box-shadow: 0 1px #3f6e17;
 }
-#card-detail > div #description dl dd form button:hover {
+#card-detail > .modal #description dl dd form button:hover {
   background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%);
   cursor: pointer;
 }
-#card-detail > div #description dl dd form a.close {
+#card-detail > .modal #description dl dd form a.close {
   display: inline-block;
   position: relative;
   width: 18px;
@@ -527,41 +536,41 @@ li.card i.fa-pencil {
   vertical-align: middle;
   transform: rotate(45deg);
 }
-#card-detail > div #description dl dd form a.close:before,
-#card-detail > div #description dl dd form a.close:after {
+#card-detail > .modal #description dl dd form a.close:before,
+#card-detail > .modal #description dl dd form a.close:after {
   position: absolute;
   content: "";
   background: #999;
 }
-#card-detail > div #description dl dd form a.close:before {
+#card-detail > .modal #description dl dd form a.close:before {
   top: 0;
   bottom: 0;
   left: 50%;
   margin-left: -1px;
   width: 2px;
 }
-#card-detail > div #description dl dd form a.close:after {
+#card-detail > .modal #description dl dd form a.close:after {
   top: 50%;
   right: 0;
   left: 0;
   height: 2px;
   margin-top: -1px;
 }
-#card-detail > div #description dl dd form a.close:hover:before,
-#card-detail > div #description dl dd form a.close:hover:after {
+#card-detail > .modal #description dl dd form a.close:hover:before,
+#card-detail > .modal #description dl dd form a.close:hover:after {
   background: #4d4d4d;
 }
-#card-detail > div #comments form {
+#card-detail > .modal #comments form {
   padding: 0 0 30px 0;
 }
-#card-detail > div #comments form dl dt {
+#card-detail > .modal #comments form dl dt {
   padding: 0 0 10px 0;
 }
-#card-detail > div #comments form dl dt label {
+#card-detail > .modal #comments form dl dt label {
   font-size: 16px;
   font-weight: bold;
 }
-#card-detail > div #comments form dl dd textarea {
+#card-detail > .modal #comments form dl dd textarea {
   width: 100%;
   min-height: 74px;
   padding: 8px;
@@ -573,10 +582,10 @@ li.card i.fa-pencil {
   border-radius: 3px;
   box-sizing: border-box;
 }
-#card-detail > div #comments form dl dd textarea:focus {
+#card-detail > .modal #comments form dl dd textarea:focus {
   outline: none;
 }
-#card-detail > div #comments form button {
+#card-detail > .modal #comments form button {
   padding: 6px 18px;
   margin: 0 10px 0 0;
   color: #fff;
@@ -587,34 +596,157 @@ li.card i.fa-pencil {
   box-shadow: 0 1px #3f6e17;
   padding: 10px 18px;
 }
-#card-detail > div #comments form button:hover {
+#card-detail > .modal #comments form button:hover {
   background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%);
   cursor: pointer;
 }
-#card-detail > div #comments form button:disabled {
+#card-detail > .modal #comments form button:disabled {
   color: #8c8c8c;
   font-weight: normal;
   background: #e2e4e6;
   box-shadow: none;
   cursor: auto;
 }
-#card-detail > div #comments h2 {
+#card-detail > .modal #comments h2 {
   padding: 0 0 12px 0;
   font-size: 16px;
 }
-#card-detail > div #comments ul li {
+#card-detail > .modal #comments ul li {
   padding: 8px 0;
   border-bottom: 1px solid #e2e4e6;
 }
-#card-detail > div #comments ul li h3 {
+#card-detail > .modal #comments ul li h3 {
   padding: 0 0 6px 0;
 }
-#card-detail > div #comments ul li p {
+#card-detail > .modal #comments ul li p {
   display: inline-block;
   padding: 10px;
   background: #fff;
   border: 1px solid #e9ebec;
   border-radius: 3px;
+}
+#card-detail > .modal .actions {
+  width: 25%;
+}
+#card-detail > .modal .actions section {
+  padding: 20px 0 0 0;
+}
+#card-detail > .modal .actions section h2 {
+  padding: 0 0 6px 0;
+  font-size: 16px;
+}
+#card-detail > .modal .actions section ul li a {
+  display: block;
+  padding: 10px;
+  color: #444;
+  font-weight: bold;
+  background: #fbfcfc;
+  border: 1px solid #e2e4e6;
+  border-radius: 3px;
+}
+#card-detail > .modal .actions section ul li a:hover {
+  color: #fff;
+  background: #2491cc;
+}
+#card-detail > .modal .actions section ul li a:hover i {
+  color: #fff;
+}
+#card-detail > .modal .actions section ul li a i {
+  padding: 0 6px 0 0;
+  color: #999;
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  z-index: 4;
+}
+.actions-modal {
+  width: 300px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #d6dadc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.actions-modal header {
+  text-align: center;
+  border-bottom: 1px solid #d6dadc;
+  margin: 0 0 6px 0;
+}
+.actions-modal header h1 {
+  display: inline-block;
+  padding: 0 0 10px 0;
+  font-weight: normal;
+  color: #8c8c8c;
+}
+.actions-modal header a.close {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+  transform: rotate(45deg);
+  float: right;
+  width: 12px;
+  height: 12px;
+  margin-top: 2px;
+}
+.actions-modal header a.close:before,
+.actions-modal header a.close:after {
+  position: absolute;
+  content: "";
+  background: #999;
+}
+.actions-modal header a.close:before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+  width: 2px;
+}
+.actions-modal header a.close:after {
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  margin-top: -1px;
+}
+.actions-modal header a.close:hover:before,
+.actions-modal header a.close:hover:after {
+  background: #4d4d4d;
+}
+.actions-modal form fieldset div {
+  float: left;
+  width: 190px;
+}
+.actions-modal form fieldset div label {
+  display: block;
+  padding: 0 0 4px 4px;
+  color: #8c8c8c;
+}
+.actions-modal form fieldset div select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  padding: 8px;
+  font: bold 18px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #4d4d4d;
+  box-sizing: border-box;
+  border: 1px solid #e2e4e6;
+  background: linear-gradient(to bottom, #fff 0, #f8f9f9 100%);
+}
+.actions-modal form fieldset div select:focus {
+  outline: none;
+}
+.actions-modal form fieldset div + div {
+  float: right;
+  width: 74px;
 }
 .gu-mirror {
   transform: rotate(4deg);
