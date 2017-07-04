@@ -20,7 +20,7 @@ var ListView = Backbone.View.extend({
       title: this.$('textarea').val(),
       listID: this.model.get('id'),
       position: cards.length + 1
-    });
+    }, { wait: true });
     this.newCardView.remove();
   },
   updateCardPositions: function() {
