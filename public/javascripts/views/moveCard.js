@@ -18,10 +18,11 @@ var MoveCardView = Backbone.View.extend({
   },
   moveCard: function(e) {
     e.preventDefault();
-    var listID = this.$('#list').val();
-    var position = this.$('#position').val();
+    var listID = Number(this.$('#list').val());
+    var position = Number(this.$('#position').val());
 
     App.trigger('move_card', this.model, listID, position);
+    this.remove();
   },
   selectCurrentList: function() {
     var list = this.model.collection.list;

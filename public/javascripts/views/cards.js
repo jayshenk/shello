@@ -9,6 +9,9 @@ var CardsView = Backbone.View.extend({
     var cardView = new CardView({ model: model });
     this.$el.append(cardView.render().el);
   },
+  removeOne: function(model) {
+    this.$('[data-id="' + model.get('id') + '"]').remove();
+  },
   updatePositions: function() {
     if (!this.$('.card').length) { return; }
     var self = this;
@@ -21,6 +24,7 @@ var CardsView = Backbone.View.extend({
   },
   initialize: function() {
     this.listenTo(this.collection, 'add', this.renderOne);
+    this.listenTo(this.collection, 'remove', this.removeOne);
     this.on('update_positions', this.updatePositions);
   }
 });

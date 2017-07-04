@@ -39,6 +39,7 @@ var App = {
     card.set('listID', listID);
     card.set('position', position);
     destinationList.cards.add(card);
+    card.trigger('moved');
   },
   bindEvents: function() {
     _.extend(this, Backbone.Events);
@@ -46,6 +47,7 @@ var App = {
     this.on('create_list', this.createList);
     this.on('show_card_detail', this.renderCardDetail);
     this.on('edit_card', this.editCard);
+    this.on('move_card', this.moveCard);
   },
   init: function(cardsJSON) {
     this.boardView = new BoardView();
