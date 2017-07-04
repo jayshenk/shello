@@ -17,6 +17,11 @@ var CommentsView = Backbone.View.extend({
       body: body,
       cardID: this.collection.card.get('id')
     });
+    this.resetForm();
+  },
+  resetForm: function() {
+    this.$('textarea').val('');
+    this.$('button').prop('disabled', true);
   },
   render: function() {
     this.$el.html(this.template());
@@ -28,5 +33,6 @@ var CommentsView = Backbone.View.extend({
   },
   initialize: function() {
     this.render();
+    this.listenTo(this.collection, 'add', this.renderOne);
   }
 });
