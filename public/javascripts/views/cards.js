@@ -10,12 +10,13 @@ var CardsView = Backbone.View.extend({
     this.$el.append(cardView.render().el);
   },
   updatePositions: function() {
+    if (!this.$('.card').length) { return; }
     var self = this;
     this.$('.card').each(function(index) {
       var id = $(this).data('id');
       var card = self.collection.get(id);
       card.set('position', index + 1);
-      card.trigger('position_updated');
+      card.trigger('moved');
     });
   },
   initialize: function() {

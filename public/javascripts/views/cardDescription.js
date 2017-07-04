@@ -20,7 +20,7 @@ var CardDescriptionView = Backbone.View.extend({
   update: function(e) {
     e.preventDefault();
     var description = this.$('textarea').val();
-    this.model.trigger('update_description', description);
+    this.model.set('description', description);
     this.render();
   },
   render: function() {

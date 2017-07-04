@@ -4,6 +4,7 @@ var App = {
   setupLists: function(cardsJSON) {
     this.lists.each(function(list) {
       list.cards = new Cards(_(cardsJSON).where({ listID: list.get('id') }));
+      list.cards.list = list;
     }.bind(this));
     this.renderLists();
   },
@@ -17,7 +18,7 @@ var App = {
     this.lists.create({
       name: name,
       position: this.lists.length
-    });
+    }, { wait: true });
   },
   renderCardDetail: function(model) {
     model.fetch({
@@ -29,6 +30,15 @@ var App = {
   editCard: function(model, offset) {
     var editCardView = new EditCardView({ model: model });
     editCardView.render(offset);
+  },
+  moveCard: function(card, listID, position) {
+    var sourceList = card.collection.list;
+    var destinationList = this.lists.get(listID);
+
+    sourceList.cards.remove(card);
+    card.set('listID', listID);
+    card.set('position', position);
+    destinationList.cards.add(card);
   },
   bindEvents: function() {
     _.extend(this, Backbone.Events);

@@ -8,7 +8,7 @@ var CardDetailView = Backbone.View.extend({
   },
   updateTitle: function() {
     var title = this.$('#title').val();
-    this.model.trigger('update_title', title);
+    this.model.set('title', title);
   },
   destroy: function(e) {
     if (e.target === this.el) { this.remove(); }

@@ -27,7 +27,6 @@ var ListsView = Backbone.View.extend({
       var id = $(this).data('id');
       var list = self.collection.get(id);
       list.set('position', index);
-      list.trigger('position_updated');
     });
   },
   saveCardPositions: function(el, target, source) {
@@ -50,7 +49,6 @@ var ListsView = Backbone.View.extend({
 
     targetList.cards.add(card, { silent: true });
     card.set('listID', targetID);
-    card.save();
   },
   setupCardsDrake: function() {
     this.cardsDrake = dragula($(this.$('.cards')).toArray());
@@ -63,11 +61,16 @@ var ListsView = Backbone.View.extend({
   renderOne: function(model) {
     var listView = new ListView({ model: model });
     this.$('.add-list').before(listView.render().el);
+    return listView;
+  },
+  setupAddedList: function(model) {
+    var listView = this.renderOne(model);
+    this.cardsDrake.containers.push(listView.$('.cards').get(0));
   },
   initialize: function() {
     this.render();
     this.setupListsDrake();
     this.setupCardsDrake();
-    this.listenTo(this.collection, 'add', this.renderOne);
+    this.listenTo(this.collection, 'add', this.setupAddedList);
   }
 });

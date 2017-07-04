@@ -748,6 +748,22 @@ li.card i.fa-pencil {
   float: right;
   width: 74px;
 }
+.actions-modal form fieldset button {
+  padding: 6px 18px;
+  margin: 0 10px 0 0;
+  color: #fff;
+  font: bold 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom, #60bc45 0, #59ab3a 100%);
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 1px #3f6e17;
+  padding: 10px 28px;
+  margin: 14px 0 0 0;
+}
+.actions-modal form fieldset button:hover {
+  background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%);
+  cursor: pointer;
+}
 .gu-mirror {
   transform: rotate(4deg);
   cursor: grabbing;

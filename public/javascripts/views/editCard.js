@@ -20,7 +20,6 @@ var EditCardView = Backbone.View.extend({
     e.preventDefault();
     var title = this.$('textarea').val();
     this.model.set('title', title);
-    this.model.save();
     this.remove();
   },
   destroy: function(e) {

@@ -14,9 +14,12 @@ var ListView = Backbone.View.extend({
   },
   createCard: function(e) {
     e.preventDefault();
-    this.model.cards.create({
+    var cards = this.model.cards;
+
+    cards.create({
       title: this.$('textarea').val(),
-      listID: this.model.get('id')
+      listID: this.model.get('id'),
+      position: cards.length + 1
     });
     this.newCardView.remove();
   },

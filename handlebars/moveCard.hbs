@@ -8,15 +8,20 @@
       <div>
         <label for="list">List</label>
         <select id="list">
-          <option>Basics</option>
+          {{#each lists}}
+            <option value="{{id}}">{{name}}</option>
+          {{/each}}
         </select>
       </div>
       <div>
         <label for="position">Position</label>
         <select id="position">
-          <option>1</option>
+          {{#each positions}}
+            <option value="{{.}}">{{.}}</option>
+          {{/each}}
         </select>
       </div>
+      <button type="submit">Move</button>
     </fieldset>
   </form>
 </div>
