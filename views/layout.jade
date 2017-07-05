@@ -12,8 +12,9 @@ html
     block content
 
     +javascript_include_tag("app")
-    +javascript_include_tag("models/card", "models/list")
+    +javascript_include_tag("models/card", "models/list", "models/label")
     +javascript_include_tag("collections/cards", "collections/lists", "collections/comments")
+    +javascript_include_tag("collections/labels")
     +javascript_include_tag("views/board", "views/lists", "views/list")
     +javascript_include_tag("views/cards", "views/card", "views/cardDetail")
     +javascript_include_tag("views/newList", "views/newCard", "views/search")
@@ -21,4 +22,5 @@ html
     +javascript_include_tag("views/comments", "views/comment", "views/moveCard")
     script.
       App.lists = new Lists(!{JSON.stringify(lists)});
+      App.labels = new Labels(!{JSON.stringify(labels)});
       App.init(!{JSON.stringify(cards)});
