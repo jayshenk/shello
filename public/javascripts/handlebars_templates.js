@@ -8,11 +8,18 @@ this["JST"]["board"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":fun
     return "<header><div id=\"search\"><input type=\"text\" /><i class=\"fa fa-search fa-flip-horizontal\" aria-hidden=\"true\"></i><a href=\"#\" class=\"close\"></a></div><div class=\"heading\"><h1>Trello Clone</h1></div><div id=\"notifications\"><a href=\"#\" class=\"fa fa-bell-o\" aria-hidden=\"true\"></a></div></header><main><header><h2>Board</h2></header><div class=\"container\"><ul id=\"lists\"></ul></div></main>";
 },"useData":true});
 
-this["JST"]["card"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+this["JST"]["card"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var helper;
 
-  return "<p>"
-    + container.escapeExpression(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"title","hash":{},"data":data}) : helper)))
+  return "<span style=\"background-color:"
+    + container.escapeExpression(((helper = (helper = helpers.color || (depth0 != null ? depth0.color : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"color","hash":{},"data":data}) : helper)))
+    + ";\"></span>";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {});
+
+  return ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.labels : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "<p>"
+    + container.escapeExpression(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
     + "</p><i class=\"fa fa-pencil\"></i>";
 },"useData":true});
 
@@ -33,9 +40,29 @@ this["JST"]["cardDescription"] = Handlebars.template({"1":function(container,dep
 this["JST"]["cardDetail"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper;
 
-  return "<div class=\"modal\"><input type=\"text\" id=\"title\" value=\""
+  return "<div class=\"modal\"><header><input type=\"text\" id=\"title\" value=\""
     + container.escapeExpression(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"title","hash":{},"data":data}) : helper)))
-    + "\" /><div class=\"col details\"><section id=\"description\"></section><section id=\"comments\"></section></div><div class=\"col actions\"><section><h2>Add</h2><ul><li><a href=\"#\" class=\"labels\"><i class=\"fa fa-tag\" aria-hidden=\"true\"></i>Labels</a></li></ul></section><section><h2>Actions</h2><ul><li><a href=\"#\" class=\"move\"><i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i>Move</a></li></ul></section></div></div>";
+    + "\" /></header><div class=\"col details\"><section id=\"card-labels\"></section><section id=\"description\"></section><section id=\"comments\"></section></div><div class=\"col actions\"><section><h2>Add</h2><ul><li><a href=\"#\" class=\"labels\"><i class=\"fa fa-tag\" aria-hidden=\"true\"></i>Labels</a></li></ul></section><section><h2>Actions</h2><ul><li><a href=\"#\" class=\"move\"><i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i>Move</a></li></ul></section></div></div>";
+},"useData":true});
+
+this["JST"]["cardLabels"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return "<h3>Labels</h3><div><ul>"
+    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.labels : depth0),{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "</ul><i class=\"fa fa-plus\"></i></div>";
+},"2":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "<li style=\"background-color:"
+    + alias4(((helper = (helper = helpers.color || (depth0 != null ? depth0.color : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"color","hash":{},"data":data}) : helper)))
+    + ";\"><p>"
+    + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
+    + "</p></li>";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return ((stack1 = helpers["if"].call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.labels : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "");
 },"useData":true});
 
 this["JST"]["comment"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {

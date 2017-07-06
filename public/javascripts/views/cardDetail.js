@@ -4,6 +4,7 @@ var CardDetailView = Backbone.View.extend({
   events: {
     'blur #title': 'updateTitle',
     'click a.labels': 'renderLabels',
+    'click .fa-plus': 'renderLabels',
     'click a.move': 'renderMove',
     'click': 'destroy'
   },
@@ -17,6 +18,9 @@ var CardDetailView = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template(this.model.toJSON()));
     App.$el.append(this.el);
+  },
+  renderCardLabels: function() {
+    new CardLabelsView({ model: this.model });
   },
   renderDescription: function() {
     new CardDescriptionView({ model: this.model });
@@ -43,6 +47,7 @@ var CardDetailView = Backbone.View.extend({
   },
   initialize: function() {
     this.render();
+    this.renderCardLabels();
     this.renderDescription();
     this.renderComments();
   }

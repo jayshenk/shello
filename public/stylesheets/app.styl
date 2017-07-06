@@ -168,6 +168,7 @@ li.list
 
 li.card
   position: relative
+  padding: 6px 8px 8px 8px
   margin: 0 0 6px 0
   background: #fff
   border-radius: 3px
@@ -189,8 +190,15 @@ li.card
       &:hover
         color: #4d4d4d
         background: #d6dadc
+  span
+    display: inline-block
+    width: 37px
+    height: 7px
+    border-radius: 3px
+    + span
+      margin: 0 0 0 4px
   p
-    padding: 8px
+    padding: 2px 0 0 0
     color: #494949
   i.fa-pencil
     display: none
@@ -278,6 +286,20 @@ li.card
     background: #edeff0
     border-radius: 3px
     box-sizing: border-box
+    header
+      padding: 0 0 12px 0
+      input
+        width: 100%
+        padding: 4px
+        font: bold 18px "Helvetica Neue", Arial, Helvetica, sans-serif
+        color: #4d4d4d
+        background: #edeff0
+        border: none
+        border-radius: 3px
+        box-sizing: border-box
+        &:focus
+          background: #fff
+          outline: none;
     .col
       display: inline-block
       vertical-align: top
@@ -285,20 +307,36 @@ li.card
       width: 75%
       padding: 0 20px 0 0
       box-sizing: border-box
-    input
-      width: 100%
-      padding: 4px
-      font: bold 18px "Helvetica Neue", Arial, Helvetica, sans-serif
-      color: #4d4d4d
-      background: #edeff0
-      border: none
-      border-radius: 3px
-      box-sizing: border-box
-      &:focus
-        background: #fff
-        outline: none;
+    #card-labels
+      h3
+        padding: 0 0 6px 0
+        font-weight: normal
+        color: #8c8c8c
+      div
+        padding: 0 0 18px 0
+        ul
+          display: inline-block
+          vertical-align: top
+          li
+            display: inline-block
+            min-width: 38px
+            height: 26px
+            margin: 0 4px 0 0
+            border-radius: 3px
+            p
+              color: #fff
+        .fa-plus
+          padding: 0 8px
+          line-height: 26px
+          color: #999
+          background: #e2e4e6
+          border-radius: 3px
+          &:hover
+            cursor: pointer
+            color: #4d4d4d
+            background: #d6dadc
     #description
-      padding: 20px 0 34px 0
+      padding: 0 0 34px 0
       a.edit
         padding: 0 0 0 6px
         color: #8c8c8c

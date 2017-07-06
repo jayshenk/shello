@@ -1,0 +1,13 @@
+{{#if labels}}
+<h3>Labels</h3>
+<div>
+  <ul>
+    {{#each labels}}
+    <li style="background-color:{{color}};">
+      <p>{{name}}</p>
+    </li>
+    {{/each}}
+  </ul>
+  <i class="fa fa-plus"></i>
+</div>
+{{/if}}

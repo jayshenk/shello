@@ -20,8 +20,9 @@ html
     +javascript_include_tag("views/newList", "views/newCard", "views/search")
     +javascript_include_tag("views/searchCards", "views/editCard", "views/cardDescription")
     +javascript_include_tag("views/comments", "views/comment", "views/actionsModal")
-    +javascript_include_tag("views/labels", "views/moveCard")
+    +javascript_include_tag("views/labels", "views/moveCard", "views/cardLabels")
     script.
       App.lists = new Lists(!{JSON.stringify(lists)});
       App.labels = new Labels(!{JSON.stringify(labels)});
       App.init(!{JSON.stringify(cards)});
+      $('.card').eq(0).trigger('click');

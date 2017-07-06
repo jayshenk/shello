@@ -20,6 +20,6 @@ var CardView = Backbone.View.extend({
   },
   initialize: function() {
     this.$el.attr('data-id', this.model.get('id'));
-    this.listenTo(this.model, 'change:title', this.render);
+    this.listenTo(this.model, 'change:title labels_updated', this.render);
   }
 });

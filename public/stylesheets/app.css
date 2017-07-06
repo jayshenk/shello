@@ -267,6 +267,7 @@ li.list #new-card + .add-card {
 }
 li.card {
   position: relative;
+  padding: 6px 8px 8px 8px;
   margin: 0 0 6px 0;
   background: #fff;
   border-radius: 3px;
@@ -292,8 +293,17 @@ li.card:hover i.fa-pencil:hover {
   color: #4d4d4d;
   background: #d6dadc;
 }
+li.card span {
+  display: inline-block;
+  width: 37px;
+  height: 7px;
+  border-radius: 3px;
+}
+li.card span + span {
+  margin: 0 0 0 4px;
+}
 li.card p {
-  padding: 8px;
+  padding: 2px 0 0 0;
   color: #494949;
 }
 li.card i.fa-pencil {
@@ -447,16 +457,10 @@ li.card i.fa-pencil {
   border-radius: 3px;
   box-sizing: border-box;
 }
-#card-detail > .modal .col {
-  display: inline-block;
-  vertical-align: top;
+#card-detail > .modal header {
+  padding: 0 0 12px 0;
 }
-#card-detail > .modal .details {
-  width: 75%;
-  padding: 0 20px 0 0;
-  box-sizing: border-box;
-}
-#card-detail > .modal input {
+#card-detail > .modal header input {
   width: 100%;
   padding: 4px;
   font: bold 18px "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -466,12 +470,55 @@ li.card i.fa-pencil {
   border-radius: 3px;
   box-sizing: border-box;
 }
-#card-detail > .modal input:focus {
+#card-detail > .modal header input:focus {
   background: #fff;
   outline: none;
 }
+#card-detail > .modal .col {
+  display: inline-block;
+  vertical-align: top;
+}
+#card-detail > .modal .details {
+  width: 75%;
+  padding: 0 20px 0 0;
+  box-sizing: border-box;
+}
+#card-detail > .modal #card-labels h3 {
+  padding: 0 0 6px 0;
+  font-weight: normal;
+  color: #8c8c8c;
+}
+#card-detail > .modal #card-labels div {
+  padding: 0 0 18px 0;
+}
+#card-detail > .modal #card-labels div ul {
+  display: inline-block;
+  vertical-align: top;
+}
+#card-detail > .modal #card-labels div ul li {
+  display: inline-block;
+  min-width: 38px;
+  height: 26px;
+  margin: 0 4px 0 0;
+  border-radius: 3px;
+}
+#card-detail > .modal #card-labels div ul li p {
+  color: #fff;
+}
+#card-detail > .modal #card-labels div .fa-plus {
+  padding: 0 8px;
+  line-height: 26px;
+  color: #999;
+  background: #e2e4e6;
+  border-radius: 3px;
+}
+#card-detail > .modal #card-labels div .fa-plus:hover {
+  cursor: pointer;
+  color: #4d4d4d;
+  background: #d6dadc;
+}
 #card-detail > .modal #description {
-  padding: 20px 0 34px 0;
+  padding: 0 0 34px 0;
 }
 #card-detail > .modal #description a.edit {
   padding: 0 0 0 6px;

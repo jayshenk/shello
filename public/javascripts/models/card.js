@@ -13,21 +13,21 @@ var Card = Backbone.Model.extend({
     var labels = this.get('labels');
     labels.push(label.toJSON());
     this.set('labels', labels);
-    this.save();
+    this.trigger('labels_updated');
   },
   removeLabel: function(label) {
     var labels = _(this.get('labels')).reject(function(item) {
       return item.id === label.get('id');
     });
     this.set('labels', labels);
-    this.save();
+    this.trigger('labels_updated');
   },
   store: function() {
     this.save();
   },
   initialize: function() {
     this.setupComments();
-    this.on('change:title change:description', this.store);
+    this.on('change:title change:description labels_updated', this.store);
     this.on('moved', this.store);
     this.on('add_label', this.addLabel);
     this.on('remove_label', this.removeLabel);
