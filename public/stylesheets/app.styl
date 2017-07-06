@@ -471,6 +471,44 @@ li.card
         padding: 10px 28px
         margin: 14px 0 0 0
 
+#labels
+  ul
+    li.label
+      width: 100%
+      + li
+        padding-top: 4px
+      div
+        display: inline-block
+        vertical-align: middle
+        width: 240px
+        height: 34px
+        margin: 0 4px 0 0
+        position: relative
+        border-radius: 3px
+        .fa-check
+          display: none
+        &:hover
+          cursor: pointer
+          width: 246px
+          margin-left: -6px
+          box-shadow: inset 8px 0 rgba(0,0,0,.3)
+        &.checked
+          .fa-check
+            display: inline
+            position: absolute
+            top: 9px
+            right: 9px
+            color: #fff
+      .fa-pencil
+        vertical-align: middle
+        padding: 10px
+        color: #999
+        border-radius: 3px
+        &:hover
+          color: #101010
+          background: #d6dadc
+          cursor: pointer
+
 .gu-mirror
   transform: rotate(4deg)
   cursor: grabbing

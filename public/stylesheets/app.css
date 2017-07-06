@@ -764,6 +764,48 @@ li.card i.fa-pencil {
   background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%);
   cursor: pointer;
 }
+#labels ul li.label {
+  width: 100%;
+}
+#labels ul li.label + li {
+  padding-top: 4px;
+}
+#labels ul li.label div {
+  display: inline-block;
+  vertical-align: middle;
+  width: 240px;
+  height: 34px;
+  margin: 0 4px 0 0;
+  position: relative;
+  border-radius: 3px;
+}
+#labels ul li.label div .fa-check {
+  display: none;
+}
+#labels ul li.label div:hover {
+  cursor: pointer;
+  width: 246px;
+  margin-left: -6px;
+  box-shadow: inset 8px 0 rgba(0,0,0,0.3);
+}
+#labels ul li.label div.checked .fa-check {
+  display: inline;
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  color: #fff;
+}
+#labels ul li.label .fa-pencil {
+  vertical-align: middle;
+  padding: 10px;
+  color: #999;
+  border-radius: 3px;
+}
+#labels ul li.label .fa-pencil:hover {
+  color: #101010;
+  background: #d6dadc;
+  cursor: pointer;
+}
 .gu-mirror {
   transform: rotate(4deg);
   cursor: grabbing;

@@ -19,7 +19,8 @@ html
     +javascript_include_tag("views/cards", "views/card", "views/cardDetail")
     +javascript_include_tag("views/newList", "views/newCard", "views/search")
     +javascript_include_tag("views/searchCards", "views/editCard", "views/cardDescription")
-    +javascript_include_tag("views/comments", "views/comment", "views/moveCard")
+    +javascript_include_tag("views/comments", "views/comment", "views/actionsModal")
+    +javascript_include_tag("views/labels", "views/moveCard")
     script.
       App.lists = new Lists(!{JSON.stringify(lists)});
       App.labels = new Labels(!{JSON.stringify(labels)});

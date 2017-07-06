@@ -1,4 +1,4 @@
-var MoveCardView = Backbone.View.extend({
+var MoveCardView = ActionsModalView.extend({
   id: 'move-card',
   className: 'modal-backdrop',
   template: App.templates.moveCard,
@@ -8,13 +8,6 @@ var MoveCardView = Backbone.View.extend({
     'click': 'destroy',
     'change #list': 'renderPositions',
     'submit': 'moveCard'
-  },
-  close: function(e) {
-    e.preventDefault();
-    this.remove();
-  },
-  destroy: function(e) {
-    if (e.target === this.el) { this.remove(); }
   },
   moveCard: function(e) {
     e.preventDefault();
@@ -47,10 +40,7 @@ var MoveCardView = Backbone.View.extend({
     }));
     this.selectCurrentList();
     this.selectCurrentPosition();
-    this.$('.actions-modal').css({
-      'margin-top': offset.top += 46,
-      'margin-left': offset.left
-    });
+    this.setMargin(offset);
     App.$el.append(this.el);
   },
   renderPositions: function(e) {

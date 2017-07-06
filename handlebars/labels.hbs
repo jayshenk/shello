@@ -1,0 +1,17 @@
+<div class="actions-modal">
+  <header>
+    <h1>Labels</h1>
+    <a class="close"></a>
+  </header>
+  <ul>
+    {{#each labels}}
+    <li class="label" data-id="{{id}}">
+      <div style="background-color:{{color}};">
+        <p>{{name}}</p>
+        <i class="fa fa-check" aria-hidden="true"></i>
+      </div>
+      <i class="fa fa-pencil"></i>
+    </li>
+    {{/each}}
+  </ul>
+</div>
