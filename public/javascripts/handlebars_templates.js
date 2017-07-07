@@ -42,7 +42,7 @@ this["JST"]["cardDetail"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main
 
   return "<div class=\"modal\"><header><input type=\"text\" id=\"title\" value=\""
     + container.escapeExpression(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"title","hash":{},"data":data}) : helper)))
-    + "\" /></header><div class=\"col details\"><section id=\"card-labels\"></section><section id=\"description\"></section><section id=\"comments\"></section></div><div class=\"col actions\"><section><h2>Add</h2><ul><li><a href=\"#\" class=\"labels\"><i class=\"fa fa-tag\" aria-hidden=\"true\"></i>Labels</a></li></ul></section><section><h2>Actions</h2><ul><li><a href=\"#\" class=\"move\"><i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i>Move</a></li></ul></section></div></div>";
+    + "\" /></header><div class=\"col details\"><section id=\"card-labels\"></section><section id=\"description\"></section><section id=\"comments\"></section></div><div class=\"col actions\"><section><h2>Add</h2><ul><li><a href=\"#\" class=\"labels\"><i class=\"fa fa-tag\" aria-hidden=\"true\"></i>Labels</a></li><li><a href=\"#\" class=\"due-date\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>Due Date</a></li></ul></section><section><h2>Actions</h2><ul><li><a href=\"#\" class=\"move\"><i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i>Move</a></li></ul></section></div></div>";
 },"useData":true});
 
 this["JST"]["cardLabels"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
@@ -79,6 +79,14 @@ this["JST"]["comments"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":
 
 this["JST"]["deleteLabel"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<div class=\"actions-modal\"><header><a class=\"fa fa-arrow-left\"></a><h1>Delete Label?</h1><a class=\"close\"></a></header><p>There is no undo. This will remove this label from all cards.</p><button class=\"delete\">Delete</button></div>";
+},"useData":true});
+
+this["JST"]["dueDate"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper;
+
+  return "<div class=\"actions-modal\"><header><h1>Change Due Date</h1><a class=\"close\"></a></header><form action=\"#\" method=\"post\"><fieldset><dl><dt><label for=\"datepicker\">Date</label></dt><dd><input type=\"text\" id=\"datepicker\" value=\""
+    + container.escapeExpression(((helper = (helper = helpers.dueDate || (depth0 != null ? depth0.dueDate : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"dueDate","hash":{},"data":data}) : helper)))
+    + "\"/></dd></dl><div id=\"calendar\"></div><button type=\"submit\">Save</button><button class=\"delete\">Remove</button></fieldset></form></div>";
 },"useData":true});
 
 this["JST"]["editCard"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -160,9 +168,9 @@ this["JST"]["moveCard"] = Handlebars.template({"1":function(container,depth0,hel
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=depth0 != null ? depth0 : (container.nullContext || {});
 
-  return "<div class=\"actions-modal\"><header><h1>Move Card</h1><a class=\"close\"></a></header><form action=\"#\" method=\"post\"><fieldset><div><label for=\"list\">List</label><select id=\"list\">"
+  return "<div class=\"actions-modal\"><header><h1>Move Card</h1><a class=\"close\"></a></header><form action=\"#\" method=\"post\"><fieldset><div class=\"select-container\"><label for=\"list\">List</label><select id=\"list\">"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.lists : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "</select></div><div><label for=\"position\">Position</label><select id=\"position\">"
+    + "</select></div><div class=\"select-container\"><label for=\"position\">Position</label><select id=\"position\">"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.positions : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "</select></div><button type=\"submit\">Move</button></fieldset></form></div>";
 },"useData":true});

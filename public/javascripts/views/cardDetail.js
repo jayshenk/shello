@@ -4,6 +4,7 @@ var CardDetailView = Backbone.View.extend({
   events: {
     'blur #title': 'updateTitle',
     'click a.labels': 'renderLabels',
+    'click a.due-date': 'renderDueDate',
     'click .fa-plus': 'renderLabels',
     'click a.move': 'renderMove',
     'click': 'destroy'
@@ -39,6 +40,13 @@ var CardDetailView = Backbone.View.extend({
     labelsView.card = this.model;
     offset.top = offset.top += 46;
     labelsView.render(offset);
+  },
+  renderDueDate: function(e) {
+    e.preventDefault();
+    var offset = $(e.target).offset();
+    var dueDateView = new DueDateView({ model: this.model });
+    offset.top = offset.top += 46;
+    dueDateView.render(offset);
   },
   renderMove: function(e) {
     e.preventDefault();

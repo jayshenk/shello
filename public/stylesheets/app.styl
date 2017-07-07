@@ -1,6 +1,7 @@
 @import "whitespace-reset.css"
 @import "mixins"
 @import "vendor/dragula.css" 
+@import "vendor/pikaday.css"
 
 html
   height: 100%
@@ -440,6 +441,7 @@ li.card
             a
               display: block
               padding: 10px
+              margin: 0 0 6px 0
               color: #444
               font-weight: bold
               background: #fbfcfc
@@ -509,7 +511,7 @@ li.card
         &:focus
           background: #fff
           outline-width: 3px
-      div
+      .select-container
         float: left
         width: 190px
         label
@@ -529,7 +531,7 @@ li.card
           background: linear-gradient(to bottom, #fff 0, #f8f9f9 100%)
           &:focus
             outline: none
-        + div
+        + .select-container
           float: right
           width: 74px
       button[type="submit"]
@@ -631,6 +633,19 @@ li.card
               color: #4d4d4d
             dd
               color: #8c8c8c
+
+#due-date
+  form
+    fieldset
+      dl
+        dt
+          padding: 0 0 4px 0
+          label
+            font-weight: bold
+            color: #4d4d4d
+        dd
+          input
+            width: 120px
 
 #delete-label
   .delete

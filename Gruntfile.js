@@ -12,7 +12,8 @@ module.exports = function(grunt) {
         dest: "public/javascripts/vendor/all.js",
         dependencies: {
           "underscore": "jquery",
-          "backbone": "underscore"
+          "backbone": "underscore",
+          "pikaday": "moment"
         }
       }
     },

@@ -1,5 +1,6 @@
 @import "whitespace-reset.css";
 @import "vendor/dragula.css";
+@import "vendor/pikaday.css";
 html {
   height: 100%;
 }
@@ -691,6 +692,7 @@ li.card i.fa-pencil {
 #card-detail > .modal .actions section ul li a {
   display: block;
   padding: 10px;
+  margin: 0 0 6px 0;
   color: #444;
   font-weight: bold;
   background: #fbfcfc;
@@ -799,16 +801,16 @@ li.card i.fa-pencil {
   background: #fff;
   outline-width: 3px;
 }
-.actions-modal form fieldset div {
+.actions-modal form fieldset .select-container {
   float: left;
   width: 190px;
 }
-.actions-modal form fieldset div label {
+.actions-modal form fieldset .select-container label {
   display: block;
   padding: 0 0 4px 4px;
   color: #8c8c8c;
 }
-.actions-modal form fieldset div select {
+.actions-modal form fieldset .select-container select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -820,10 +822,10 @@ li.card i.fa-pencil {
   border: 1px solid #e2e4e6;
   background: linear-gradient(to bottom, #fff 0, #f8f9f9 100%);
 }
-.actions-modal form fieldset div select:focus {
+.actions-modal form fieldset .select-container select:focus {
   outline: none;
 }
-.actions-modal form fieldset div + div {
+.actions-modal form fieldset .select-container + .select-container {
   float: right;
   width: 74px;
 }
@@ -975,6 +977,16 @@ li.card i.fa-pencil {
 #new-label form fieldset ul li:last-child dl dd,
 #edit-label form fieldset ul li:last-child dl dd {
   color: #8c8c8c;
+}
+#due-date form fieldset dl dt {
+  padding: 0 0 4px 0;
+}
+#due-date form fieldset dl dt label {
+  font-weight: bold;
+  color: #4d4d4d;
+}
+#due-date form fieldset dl dd input {
+  width: 120px;
 }
 #delete-label .delete {
   padding: 10px 20px;
