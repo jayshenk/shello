@@ -1,1 +1,1 @@
-{"last_id":2,"data":[{"labels":[{"name":"test","color":"#ff82d0","id":8},{"name":"test 3","color":"#4ee793","id":10}],"title":"This is a card","listID":1,"position":1,"id":1,"description":"Sed tempor dolor a augue scelerisque, eu pulvinar magna sodales."},{"labels":[{"id":6,"color":"#027bc1","name":""},{"id":4,"color":"#ec5a44","name":""}],"title":"Another card","listID":1,"position":2,"id":2}]}
+{"last_id":1,"data":[{"labels":[{"name":"test","color":"#ec5a44","id":7}],"title":"This is a card","listID":1,"position":2,"id":1}]}

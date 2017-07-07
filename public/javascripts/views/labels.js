@@ -5,6 +5,7 @@ var LabelsView = ActionsModalView.extend({
   events: {
     'click .label div': 'toggleLabel',
     'click a.new-label': 'renderNewLabel',
+    'click .fa-pencil': 'renderEditLabel',
     'click a.close': 'close',
     'click': 'destroy'
   },
@@ -31,6 +32,15 @@ var LabelsView = ActionsModalView.extend({
     newLabelView.card = this.card;
     newLabelView.render(offset);
     this.remove();
+  },
+  renderEditLabel: function(e) {
+    var id = $(e.target).closest('.label').data('id');
+    var model = this.collection.get(id);
+    var offset = this.$('.actions-modal').offset();
+    var editLabelView = new EditLabelView({ model: model });
+    editLabelView.card = this.card;
+    editLabelView.render(offset);
+    this.remove()
   },
   render: function(offset) {
     this.$el.html(this.template({ labels: this.collection.toJSON() }));

@@ -93,6 +93,24 @@ this["JST"]["editDescription"] = Handlebars.template({"compiler":[7,">= 4.0.0"],
     + "</textarea><button type=\"submit\">Save</button><a href=\"#\" class=\"close\"></a></form>";
 },"useData":true});
 
+this["JST"]["editLabel"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    var alias1=container.lambda, alias2=container.escapeExpression;
+
+  return "<li class=\"label\" data-color=\""
+    + alias2(alias1(depth0, depth0))
+    + "\" style=\"background-color:"
+    + alias2(alias1(depth0, depth0))
+    + ";\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></li>";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {});
+
+  return "<div class=\"actions-modal\"><header><a class=\"fa fa-arrow-left\"></a><h1>Change Label</h1><a class=\"close\"></a></header><form action=\"#\" method=\"post\"><fieldset><dl><dt><label for=\"name\">Name</label></dt><dd><input id=\"name\" type=\"text\" value=\""
+    + container.escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
+    + "\"></input></dd><dt><label>Select a color</label></dt><dd><ul>"
+    + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.colors : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "<li><dl><dt>No color.</dt><dd>This won't show up on the front of cards.</dd></dl></li></ul></dd></dl><button type=\"submit\">Save</button></fieldset></form></div>";
+},"useData":true});
+
 this["JST"]["labels"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 

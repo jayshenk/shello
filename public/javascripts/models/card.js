@@ -22,6 +22,15 @@ var Card = Backbone.Model.extend({
     this.set('labels', labels);
     this.trigger('labels_updated');
   },
+  updateLabel: function(updatedLabel) {
+    var labels = this.get('labels');
+    var label = _(labels).findWhere({
+      id: updatedLabel.get('id')
+    });
+    _(label).extend(updatedLabel.toJSON());
+    this.set('labels', labels);
+    this.trigger('labels_updated');
+  },
   store: function() {
     this.save();
   },
@@ -31,5 +40,6 @@ var Card = Backbone.Model.extend({
     this.on('moved', this.store);
     this.on('add_label', this.addLabel);
     this.on('remove_label', this.removeLabel);
+    this.listenTo(App, 'label_changed', this.updateLabel);
   }
 });
