@@ -152,7 +152,7 @@ this["JST"]["newCard"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":f
 this["JST"]["newLabel"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var alias1=container.lambda, alias2=container.escapeExpression;
 
-  return "<li data-color=\""
+  return "<li class=\"label\" data-color=\""
     + alias2(alias1(depth0, depth0))
     + "\" style=\"background-color:"
     + alias2(alias1(depth0, depth0))

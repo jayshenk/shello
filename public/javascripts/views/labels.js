@@ -9,7 +9,7 @@ var LabelsView = ActionsModalView.extend({
     'click': 'destroy'
   },
   toggleLabel: function(e) {
-    var $el = $(e.target);
+    var $el = $(e.currentTarget);
     var id = $el.closest('li').data('id');
     var label = this.collection.get(id);
     var event;

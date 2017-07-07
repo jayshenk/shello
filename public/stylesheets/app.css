@@ -497,13 +497,19 @@ li.card i.fa-pencil {
 }
 #card-detail > .modal #card-labels div ul li {
   display: inline-block;
+  vertical-align: top;
   min-width: 38px;
   height: 26px;
+  padding: 0 6px;
   margin: 0 4px 0 0;
   border-radius: 3px;
+  box-sizing: border-box;
 }
 #card-detail > .modal #card-labels div ul li p {
+  text-align: center;
+  line-height: 26px;
   color: #fff;
+  text-shadow: 0 0 3px #000;
 }
 #card-detail > .modal #card-labels div .fa-plus {
   padding: 0 8px;
@@ -851,9 +857,16 @@ li.card i.fa-pencil {
   vertical-align: middle;
   width: 240px;
   height: 34px;
+  padding: 0 0 0 10px;
   margin: 0 4px 0 0;
   position: relative;
   border-radius: 3px;
+  box-sizing: border-box;
+}
+#labels ul li.label div p {
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+  line-height: 34px;
 }
 #labels ul li.label div .fa-check {
   display: none;
@@ -861,6 +874,7 @@ li.card i.fa-pencil {
 #labels ul li.label div:hover {
   cursor: pointer;
   width: 246px;
+  padding-left: 18px;
   margin-left: -6px;
   box-shadow: inset 8px 0 rgba(0,0,0,0.3);
 }
@@ -909,6 +923,8 @@ li.card i.fa-pencil {
 #new-label form fieldset ul li,
 #edit-label form fieldset ul li {
   display: inline-block;
+  vertical-align: top;
+  text-align: center;
   width: 44px;
   height: 34px;
   margin: 0 10px 8px 0;
@@ -918,14 +934,23 @@ li.card i.fa-pencil {
 #edit-label form fieldset ul li .fa-check {
   display: none;
 }
+#new-label form fieldset ul li:hover,
+#edit-label form fieldset ul li:hover {
+  cursor: pointer;
+}
 #new-label form fieldset ul li.checked .fa-check,
 #edit-label form fieldset ul li.checked .fa-check {
   display: inline;
+  color: #fff;
+  line-height: 34px;
 }
 #new-label form fieldset ul li:last-child,
 #edit-label form fieldset ul li:last-child {
   width: 214px;
-  vertical-align: top;
+}
+#new-label form fieldset ul li:last-child dl,
+#edit-label form fieldset ul li:last-child dl {
+  text-align: left;
 }
 #new-label form fieldset ul li:last-child dl dt,
 #edit-label form fieldset ul li:last-child dl dt {

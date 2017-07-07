@@ -319,12 +319,18 @@ li.card
           vertical-align: top
           li
             display: inline-block
+            vertical-align: top
             min-width: 38px
             height: 26px
+            padding: 0 6px
             margin: 0 4px 0 0
             border-radius: 3px
+            box-sizing: border-box
             p
+              text-align: center
+              line-height: 26px
               color: #fff
+              text-shadow: 0 0 3px #000
         .fa-plus
           padding: 0 8px
           line-height: 26px
@@ -543,14 +549,21 @@ li.card
         vertical-align: middle
         width: 240px
         height: 34px
+        padding: 0 0 0 10px
         margin: 0 4px 0 0
         position: relative
         border-radius: 3px
+        box-sizing: border-box
+        p
+          color: #fff
+          text-shadow: 0 0 3px #000
+          line-height: 34px
         .fa-check
           display: none
         &:hover
           cursor: pointer
           width: 246px
+          padding-left: 18px
           margin-left: -6px
           box-shadow: inset 8px 0 rgba(0,0,0,.3)
         &.checked
@@ -592,19 +605,25 @@ li.card
         padding: 0 0 6px 0
         li
           display: inline-block
+          vertical-align: top
+          text-align: center
           width: 44px
           height: 34px
           margin: 0 10px 8px 0
           border-radius: 3px
           .fa-check
             display: none
+          &:hover
+            cursor: pointer
           &.checked
             .fa-check
               display: inline
+              color: #fff
+              line-height: 34px
         li:last-child
           width: 214px
-          vertical-align: top
           dl
+            text-align: left
             dt
               color: #4d4d4d
             dd
