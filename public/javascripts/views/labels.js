@@ -4,6 +4,7 @@ var LabelsView = ActionsModalView.extend({
   template: App.templates.labels,
   events: {
     'click .label div': 'toggleLabel',
+    'click a.new-label': 'renderNewLabel',
     'click a.close': 'close',
     'click': 'destroy'
   },
@@ -22,6 +23,14 @@ var LabelsView = ActionsModalView.extend({
     cardLabelIDs.forEach(function(id) {
       this.$('li[data-id="' + id + '"] div').addClass('checked');
     }, this);
+  },
+  renderNewLabel: function(e) {
+    e.preventDefault();
+    var offset = this.$('.actions-modal').offset();
+    var newLabelView = new NewLabelView({ collection: this.collection });
+    newLabelView.card = this.card;
+    newLabelView.render(offset);
+    this.remove();
   },
   render: function(offset) {
     this.$el.html(this.template({ labels: this.collection.toJSON() }));

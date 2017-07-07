@@ -724,6 +724,17 @@ li.card i.fa-pencil {
   border-bottom: 1px solid #d6dadc;
   margin: 0 0 6px 0;
 }
+.actions-modal header a.fa-arrow-left {
+  float: left;
+  width: 12px;
+  height: 12px;
+  color: #999;
+  margin-top: 2px;
+}
+.actions-modal header a.fa-arrow-left:hover {
+  cursor: pointer;
+  color: #4d4d4d;
+}
 .actions-modal header h1 {
   display: inline-block;
   padding: 0 0 10px 0;
@@ -742,6 +753,7 @@ li.card i.fa-pencil {
   width: 12px;
   height: 12px;
   margin-top: 2px;
+  cursor: pointer;
 }
 .actions-modal header a.close:before,
 .actions-modal header a.close:after {
@@ -766,6 +778,20 @@ li.card i.fa-pencil {
 .actions-modal header a.close:hover:before,
 .actions-modal header a.close:hover:after {
   background: #4d4d4d;
+}
+.actions-modal form fieldset input {
+  width: 100%;
+  padding: 8px;
+  margin: 0 0 10px 0;
+  font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  background: #e2e4e6;
+  border: 1px solid #cdd2d4;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.actions-modal form fieldset input:focus {
+  background: #fff;
+  outline-width: 3px;
 }
 .actions-modal form fieldset div {
   float: left;
@@ -811,6 +837,9 @@ li.card i.fa-pencil {
   background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%);
   cursor: pointer;
 }
+#labels ul {
+  padding: 0 0 8px 0;
+}
 #labels ul li.label {
   width: 100%;
 }
@@ -852,6 +881,59 @@ li.card i.fa-pencil {
   color: #101010;
   background: #d6dadc;
   cursor: pointer;
+}
+#labels a.new-label {
+  display: block;
+  padding: 8px;
+  text-decoration: underline;
+  color: #8d8d8d;
+  border-radius: 3px;
+}
+#labels a.new-label:hover {
+  color: #4d4d4d;
+  background: #d6dadc;
+}
+#new-label form fieldset dl dt,
+#edit-label form fieldset dl dt {
+  padding: 0 0 4px 0;
+}
+#new-label form fieldset dl dt label,
+#edit-label form fieldset dl dt label {
+  font-weight: bold;
+  color: #4d4d4d;
+}
+#new-label form fieldset ul,
+#edit-label form fieldset ul {
+  padding: 0 0 6px 0;
+}
+#new-label form fieldset ul li,
+#edit-label form fieldset ul li {
+  display: inline-block;
+  width: 44px;
+  height: 34px;
+  margin: 0 10px 8px 0;
+  border-radius: 3px;
+}
+#new-label form fieldset ul li .fa-check,
+#edit-label form fieldset ul li .fa-check {
+  display: none;
+}
+#new-label form fieldset ul li.checked .fa-check,
+#edit-label form fieldset ul li.checked .fa-check {
+  display: inline;
+}
+#new-label form fieldset ul li:last-child,
+#edit-label form fieldset ul li:last-child {
+  width: 214px;
+  vertical-align: top;
+}
+#new-label form fieldset ul li:last-child dl dt,
+#edit-label form fieldset ul li:last-child dl dt {
+  color: #4d4d4d;
+}
+#new-label form fieldset ul li:last-child dl dd,
+#edit-label form fieldset ul li:last-child dl dd {
+  color: #8c8c8c;
 }
 .gu-mirror {
   transform: rotate(4deg);

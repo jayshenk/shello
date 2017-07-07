@@ -8,7 +8,7 @@ var ActionsModalView = Backbone.View.extend({
   },
   setMargin: function(offset) {
     this.$('.actions-modal').css({
-      'margin-top': offset.top += 46,
+      'margin-top': offset.top,
       'margin-left': offset.left
     });
   }

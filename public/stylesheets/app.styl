@@ -468,6 +468,15 @@ li.card
     text-align: center
     border-bottom: 1px solid #d6dadc
     margin: 0 0 6px 0
+    a.fa-arrow-left
+      float: left
+      width: 12px
+      height: 12px
+      color: #999
+      margin-top: 2px
+      &:hover
+        cursor: pointer
+        color: #4d4d4d
     h1
       display: inline-block
       padding: 0 0 10px 0
@@ -479,8 +488,21 @@ li.card
       width: 12px
       height: 12px
       margin-top: 2px
+      cursor: pointer
   form
     fieldset
+      input
+        width: 100%
+        padding: 8px
+        margin: 0 0 10px 0
+        font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif
+        background: #e2e4e6
+        border: 1px solid #cdd2d4
+        box-sizing: border-box
+        border-radius: 3px
+        &:focus
+          background: #fff
+          outline-width: 3px
       div
         float: left
         width: 190px
@@ -511,6 +533,7 @@ li.card
 
 #labels
   ul
+    padding: 0 0 8px 0
     li.label
       width: 100%
       + li
@@ -546,6 +569,46 @@ li.card
           color: #101010
           background: #d6dadc
           cursor: pointer
+  a.new-label
+    display: block
+    padding: 8px
+    text-decoration: underline
+    color: #8d8d8d
+    border-radius: 3px
+    &:hover
+      color: #4d4d4d
+      background: #d6dadc
+
+#new-label, #edit-label
+  form
+    fieldset
+      dl
+        dt
+          padding: 0 0 4px 0
+          label
+            font-weight: bold
+            color: #4d4d4d
+      ul
+        padding: 0 0 6px 0
+        li
+          display: inline-block
+          width: 44px
+          height: 34px
+          margin: 0 10px 8px 0
+          border-radius: 3px
+          .fa-check
+            display: none
+          &.checked
+            .fa-check
+              display: inline
+        li:last-child
+          width: 214px
+          vertical-align: top
+          dl
+            dt
+              color: #4d4d4d
+            dd
+              color: #8c8c8c
 
 .gu-mirror
   transform: rotate(4deg)

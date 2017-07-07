@@ -37,6 +37,7 @@ var CardDetailView = Backbone.View.extend({
     var offset = $(e.target).offset();
     var labelsView = new LabelsView({ collection: App.labels });
     labelsView.card = this.model;
+    offset.top = offset.top += 46;
     labelsView.render(offset);
   },
   renderMove: function(e) {

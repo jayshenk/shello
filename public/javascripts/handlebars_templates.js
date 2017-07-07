@@ -108,7 +108,7 @@ this["JST"]["labels"] = Handlebars.template({"1":function(container,depth0,helpe
 
   return "<div class=\"actions-modal\"><header><h1>Labels</h1><a class=\"close\"></a></header><ul>"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.labels : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "</ul></div>";
+    + "</ul><a href=\"#\" class=\"new-label\">Create a new label</a></div>";
 },"useData":true});
 
 this["JST"]["list"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -147,6 +147,22 @@ this["JST"]["moveCard"] = Handlebars.template({"1":function(container,depth0,hel
 
 this["JST"]["newCard"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<fieldset><textarea id=\"title\"></textarea><button type=\"submit\">Add</button><a href=\"#\" class=\"close\"></a></fieldset>";
+},"useData":true});
+
+this["JST"]["newLabel"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    var alias1=container.lambda, alias2=container.escapeExpression;
+
+  return "<li data-color=\""
+    + alias2(alias1(depth0, depth0))
+    + "\" style=\"background-color:"
+    + alias2(alias1(depth0, depth0))
+    + ";\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i></li>";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return "<div class=\"actions-modal\"><header><a class=\"fa fa-arrow-left\"></a><h1>Create Label</h1><a class=\"close\"></a></header><form action=\"#\" method=\"post\"><fieldset><dl><dt><label for=\"name\">Name</label></dt><dd><input id=\"name\" type=\"text\"></input></dd><dt><label>Select a color</label></dt><dd><ul>"
+    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.colors : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "<li><dl><dt>No color.</dt><dd>This won't show up on the front of cards.</dd></dl></li></ul></dd></dl><button type=\"submit\">Create</button></fieldset></form></div>";
 },"useData":true});
 
 this["JST"]["newList"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
