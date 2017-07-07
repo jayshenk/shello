@@ -532,10 +532,13 @@ li.card
         + div
           float: right
           width: 74px
-      button
+      button[type="submit"]
         button()
         padding: 10px 28px
         margin: 14px 0 0 0
+      .delete
+        delete()
+        float: right
 
 #labels
   ul
@@ -628,6 +631,11 @@ li.card
               color: #4d4d4d
             dd
               color: #8c8c8c
+
+#delete-label
+  .delete
+    delete()
+    width: 100%
 
 .gu-mirror
   transform: rotate(4deg)

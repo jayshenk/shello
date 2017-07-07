@@ -5,6 +5,7 @@ var EditLabelView = ActionsModalView.extend({
   events: {
     'click .label': 'selectColor',
     'submit': 'update',
+    'click .delete': 'renderDelete',
     'click a.fa-arrow-left': 'renderLabels',
     'click a.close': 'close',
     'click': 'destroy'
@@ -28,6 +29,15 @@ var EditLabelView = ActionsModalView.extend({
     this.model.set({ name: name, color: color });
     App.trigger('label_changed', this.model);
     this.renderLabels();
+  },
+  renderDelete: function(e) {
+    e.preventDefault();
+    var offset = this.$('.actions-modal').offset();
+    var deleteLabelView = new DeleteLabelView({ model: this.model });
+
+    deleteLabelView.card = this.card;
+    deleteLabelView.render(offset);
+    this.remove();
   },
   renderLabels: function(e) {
     if (e) { e.preventDefault(); }

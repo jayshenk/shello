@@ -827,7 +827,7 @@ li.card i.fa-pencil {
   float: right;
   width: 74px;
 }
-.actions-modal form fieldset button {
+.actions-modal form fieldset button[type="submit"] {
   padding: 6px 18px;
   margin: 0 10px 0 0;
   color: #fff;
@@ -839,9 +839,25 @@ li.card i.fa-pencil {
   padding: 10px 28px;
   margin: 14px 0 0 0;
 }
-.actions-modal form fieldset button:hover {
+.actions-modal form fieldset button[type="submit"]:hover {
   background: linear-gradient(to bottom, #59ab3a 0, #50972f 100%);
   cursor: pointer;
+}
+.actions-modal form fieldset .delete {
+  padding: 10px 20px;
+  margin: 14px 0 0 0;
+  color: #b14631;
+  background: linear-gradient(to bottom, #d6dadc 0, #cdd2d4 100%);
+  font: bold 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  border: none;
+  box-shadow: 0 1px #3f6e17;
+  border-radius: 3px;
+  float: right;
+}
+.actions-modal form fieldset .delete:hover {
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(to bottom, #d0513b 0, #b14631 100%);
 }
 #labels ul {
   padding: 0 0 8px 0;
@@ -959,6 +975,22 @@ li.card i.fa-pencil {
 #new-label form fieldset ul li:last-child dl dd,
 #edit-label form fieldset ul li:last-child dl dd {
   color: #8c8c8c;
+}
+#delete-label .delete {
+  padding: 10px 20px;
+  margin: 14px 0 0 0;
+  color: #b14631;
+  background: linear-gradient(to bottom, #d6dadc 0, #cdd2d4 100%);
+  font: bold 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  border: none;
+  box-shadow: 0 1px #3f6e17;
+  border-radius: 3px;
+  width: 100%;
+}
+#delete-label .delete:hover {
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(to bottom, #d0513b 0, #b14631 100%);
 }
 .gu-mirror {
   transform: rotate(4deg);

@@ -41,5 +41,6 @@ var Card = Backbone.Model.extend({
     this.on('add_label', this.addLabel);
     this.on('remove_label', this.removeLabel);
     this.listenTo(App, 'label_changed', this.updateLabel);
+    this.listenTo(App, 'label_deleted', this.removeLabel);
   }
 });

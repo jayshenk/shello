@@ -77,6 +77,10 @@ this["JST"]["comments"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":
     return "<form action=\"#\" method=\"post\"><dl><dt><label>Add Comment</label></dt><dd><textarea placeholder=\"Write a comment...\"></textarea></dd></dl><button type=\"submit\" disabled>Save</button></form><h2>Activity</h2><ul></ul>";
 },"useData":true});
 
+this["JST"]["deleteLabel"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<div class=\"actions-modal\"><header><a class=\"fa fa-arrow-left\"></a><h1>Delete Label?</h1><a class=\"close\"></a></header><p>There is no undo. This will remove this label from all cards.</p><button class=\"delete\">Delete</button></div>";
+},"useData":true});
+
 this["JST"]["editCard"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper;
 
@@ -108,7 +112,7 @@ this["JST"]["editLabel"] = Handlebars.template({"1":function(container,depth0,he
     + container.escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
     + "\"></input></dd><dt><label>Select a color</label></dt><dd><ul>"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.colors : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "<li><dl><dt>No color.</dt><dd>This won't show up on the front of cards.</dd></dl></li></ul></dd></dl><button type=\"submit\">Save</button></fieldset></form></div>";
+    + "<li><dl><dt>No color.</dt><dd>This won't show up on the front of cards.</dd></dl></li></ul></dd></dl><button type=\"submit\">Save</button><button class=\"delete\">Delete</button></fieldset></form></div>";
 },"useData":true});
 
 this["JST"]["labels"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
