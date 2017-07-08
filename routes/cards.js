@@ -1,6 +1,7 @@
 var path = require("path");
 var _ = require("underscore");
 var Cards = require(path.resolve(path.dirname(__dirname), "modules/cards"));
+var Comments = require(path.resolve(path.dirname(__dirname), "modules/comments"));
 
 module.exports = function(router) {
   router.route("/cards").get(function(req, res) {
@@ -27,11 +28,16 @@ module.exports = function(router) {
     Cards.update(cards);
     res.json(currentCard);
   }).delete(function(req, res) {
+    var id = Number(req.params.id)
     var cards = _(Cards.get()).reject(function(card) {
-      return card.id === Number(req.params.id);
+      return card.id === id;
+    });
+    var comments = _(Comments.get()).reject(function(comment) {
+      return comment.cardID === id;
     });
 
     Cards.update(cards);
+    Comments.update(comments);
     res.status(200).end();
   });
 };

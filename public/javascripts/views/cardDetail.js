@@ -7,6 +7,7 @@ var CardDetailView = Backbone.View.extend({
     'click a.due-date': 'renderDueDate',
     'click .fa-plus': 'renderLabels',
     'click a.move': 'renderMove',
+    'click a.delete-card': 'renderDelete',
     'click': 'destroy'
   },
   updateTitle: function() {
@@ -19,6 +20,10 @@ var CardDetailView = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template(this.model.toJSON()));
     App.$el.append(this.el);
+    this.renderCardLabels();
+    this.renderCardDueDate();
+    this.renderDescription();
+    this.renderComments();
   },
   renderCardLabels: function() {
     new CardLabelsView({ model: this.model });
@@ -36,32 +41,38 @@ var CardDetailView = Backbone.View.extend({
       }.bind(this)
     });
   },
+  getOffset: function(e) {
+    var offset = $(e.target).offset();
+    offset.top = offset.top += 46;
+    return offset;
+  },
   renderLabels: function(e) {
     e.preventDefault();
-    var offset = $(e.target).offset();
+    var offset = this.getOffset(e);
     var labelsView = new LabelsView({ collection: App.labels });
     labelsView.card = this.model;
-    offset.top = offset.top += 46;
     labelsView.render(offset);
   },
   renderDueDate: function(e) {
     e.preventDefault();
-    var offset = $(e.target).offset();
+    var offset = this.getOffset(e);
     var dueDateView = new DueDateView({ model: this.model });
-    offset.top = offset.top += 46;
     dueDateView.render(offset);
   },
   renderMove: function(e) {
     e.preventDefault();
-    var offset = $(e.target).offset();
+    var offset = this.getOffset(e);
     var moveCardView = new MoveCardView({ model: this.model });
     moveCardView.render(offset);
   },
+  renderDelete: function(e) {
+    e.preventDefault();
+    var offset = this.getOffset(e);
+    var deleteCardView = new DeleteCardView({ model: this.model });
+    deleteCardView.render(offset);
+  },
   initialize: function() {
     this.render();
-    this.renderCardLabels();
-    this.renderCardDueDate();
-    this.renderDescription();
-    this.renderComments();
+    this.listenTo(this.model, 'destroy', this.remove);
   }
 });

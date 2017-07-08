@@ -22,9 +22,8 @@ html
     +javascript_include_tag("views/comments", "views/comment", "views/actionsModal")
     +javascript_include_tag("views/labels", "views/moveCard", "views/cardLabels")
     +javascript_include_tag("views/newLabel", "views/editLabel", "views/deleteLabel")
-    +javascript_include_tag("views/dueDate", "views/cardDueDate")
+    +javascript_include_tag("views/dueDate", "views/cardDueDate", "views/deleteCard")
     script.
       App.lists = new Lists(!{JSON.stringify(lists)});
       App.labels = new Labels(!{JSON.stringify(labels)});
       App.init(!{JSON.stringify(cards)});
-      $('.card').eq(0).trigger('click');
