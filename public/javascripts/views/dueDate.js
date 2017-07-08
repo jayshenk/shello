@@ -18,8 +18,7 @@ var DueDateView = ActionsModalView.extend({
   },
   setDueDate: function(e) {
     e.preventDefault();
-    var dueDate = this.$('input').val();
-
+    var dueDate = moment(this.$('input').val(), 'M/D/YYYY').toJSON();
     this.model.set('dueDate', dueDate);
     this.remove();
   },
@@ -32,8 +31,13 @@ var DueDateView = ActionsModalView.extend({
     this.$('input').select();
   },
   render: function(offset) {
-    var dueDate = this.model.get('dueDate') || moment().format('M/D/YYYY');
+    var dueDate = this.model.get('dueDate');
 
+    if (dueDate) {
+      dueDate = moment(dueDate).format('M/D/YYYY');
+    } else {
+      dueDate = moment().format('M/D/YYYY');
+    }
     this.$el.html(this.template({ dueDate: dueDate }));
     this.setMargin(offset);
     App.$el.append(this.el);

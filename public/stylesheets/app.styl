@@ -309,6 +309,8 @@ li.card
       padding: 0 20px 0 0
       box-sizing: border-box
     #card-labels
+      display: inline-block
+      vertical-align: top
       h3
         padding: 0 0 6px 0
         font-weight: normal
@@ -334,6 +336,7 @@ li.card
               text-shadow: 0 0 3px #000
         .fa-plus
           padding: 0 8px
+          margin: 0 24px 0 0
           line-height: 26px
           color: #999
           background: #e2e4e6
@@ -342,6 +345,23 @@ li.card
             cursor: pointer
             color: #4d4d4d
             background: #d6dadc
+    #card-due-date
+      display: inline-block
+      h3
+        padding: 0 0 6px 0
+        font-weight: normal
+        color: #8c8c8c
+      a.due-date
+        display: inline-block
+        padding: 6px
+        margin: 0 0 20px 0
+        color: #8c8c8c
+        text-decoration: underline
+        background: #e2e4e6
+        border-radius: 3px
+        &:hover
+          color: #4d4d4d
+          background: #d6dadc
     #description
       padding: 0 0 34px 0
       a.edit

@@ -484,6 +484,10 @@ li.card i.fa-pencil {
   padding: 0 20px 0 0;
   box-sizing: border-box;
 }
+#card-detail > .modal #card-labels {
+  display: inline-block;
+  vertical-align: top;
+}
 #card-detail > .modal #card-labels h3 {
   padding: 0 0 6px 0;
   font-weight: normal;
@@ -514,6 +518,7 @@ li.card i.fa-pencil {
 }
 #card-detail > .modal #card-labels div .fa-plus {
   padding: 0 8px;
+  margin: 0 24px 0 0;
   line-height: 26px;
   color: #999;
   background: #e2e4e6;
@@ -521,6 +526,27 @@ li.card i.fa-pencil {
 }
 #card-detail > .modal #card-labels div .fa-plus:hover {
   cursor: pointer;
+  color: #4d4d4d;
+  background: #d6dadc;
+}
+#card-detail > .modal #card-due-date {
+  display: inline-block;
+}
+#card-detail > .modal #card-due-date h3 {
+  padding: 0 0 6px 0;
+  font-weight: normal;
+  color: #8c8c8c;
+}
+#card-detail > .modal #card-due-date a.due-date {
+  display: inline-block;
+  padding: 6px;
+  margin: 0 0 20px 0;
+  color: #8c8c8c;
+  text-decoration: underline;
+  background: #e2e4e6;
+  border-radius: 3px;
+}
+#card-detail > .modal #card-due-date a.due-date:hover {
   color: #4d4d4d;
   background: #d6dadc;
 }

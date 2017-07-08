@@ -22,7 +22,7 @@ html
     +javascript_include_tag("views/comments", "views/comment", "views/actionsModal")
     +javascript_include_tag("views/labels", "views/moveCard", "views/cardLabels")
     +javascript_include_tag("views/newLabel", "views/editLabel", "views/deleteLabel")
-    +javascript_include_tag("views/dueDate")
+    +javascript_include_tag("views/dueDate", "views/cardDueDate")
     script.
       App.lists = new Lists(!{JSON.stringify(lists)});
       App.labels = new Labels(!{JSON.stringify(labels)});

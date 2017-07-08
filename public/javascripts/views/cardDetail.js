@@ -23,6 +23,9 @@ var CardDetailView = Backbone.View.extend({
   renderCardLabels: function() {
     new CardLabelsView({ model: this.model });
   },
+  renderCardDueDate: function() {
+    new CardDueDateView({ model: this.model });
+  },
   renderDescription: function() {
     new CardDescriptionView({ model: this.model });
   },
@@ -57,6 +60,7 @@ var CardDetailView = Backbone.View.extend({
   initialize: function() {
     this.render();
     this.renderCardLabels();
+    this.renderCardDueDate();
     this.renderDescription();
     this.renderComments();
   }

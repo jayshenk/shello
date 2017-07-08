@@ -42,7 +42,19 @@ this["JST"]["cardDetail"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main
 
   return "<div class=\"modal\"><header><input type=\"text\" id=\"title\" value=\""
     + container.escapeExpression(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"title","hash":{},"data":data}) : helper)))
-    + "\" /></header><div class=\"col details\"><section id=\"card-labels\"></section><section id=\"description\"></section><section id=\"comments\"></section></div><div class=\"col actions\"><section><h2>Add</h2><ul><li><a href=\"#\" class=\"labels\"><i class=\"fa fa-tag\" aria-hidden=\"true\"></i>Labels</a></li><li><a href=\"#\" class=\"due-date\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>Due Date</a></li></ul></section><section><h2>Actions</h2><ul><li><a href=\"#\" class=\"move\"><i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i>Move</a></li></ul></section></div></div>";
+    + "\" /></header><div class=\"col details\"><section id=\"card-labels\"></section><section id=\"card-due-date\"></section><section id=\"description\"></section><section id=\"comments\"></section></div><div class=\"col actions\"><section><h2>Add</h2><ul><li><a href=\"#\" class=\"labels\"><i class=\"fa fa-tag\" aria-hidden=\"true\"></i>Labels</a></li><li><a href=\"#\" class=\"due-date\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>Due Date</a></li></ul></section><section><h2>Actions</h2><ul><li><a href=\"#\" class=\"move\"><i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i>Move</a></li></ul></section></div></div>";
+},"useData":true});
+
+this["JST"]["cardDueDate"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    var helper;
+
+  return "<h3>Due Date</h3><a href=\"#\" class=\"due-date\">"
+    + container.escapeExpression(((helper = (helper = helpers.dueDate || (depth0 != null ? depth0.dueDate : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"dueDate","hash":{},"data":data}) : helper)))
+    + "</a>";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return ((stack1 = helpers["if"].call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.dueDate : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "");
 },"useData":true});
 
 this["JST"]["cardLabels"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
