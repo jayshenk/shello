@@ -12,6 +12,7 @@ var Cards = Backbone.Collection.extend({
   },
   incrementPositions: function(addedModel) {
     this.filter(function(model) {
+      if (model === addedModel) { return false; }
       return model.get('position') >= addedModel.get('position');
     }).forEach(function(model) {
       model.set('position', model.get('position') + 1);

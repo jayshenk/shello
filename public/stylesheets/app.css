@@ -451,6 +451,7 @@ li.card i.fa-pencil {
 #card-detail > .modal {
   width: 730px;
   padding: 10px 14px 20px 46px;
+  position: relative;
   color: #4d4d4d;
   font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
   margin: 50px auto;
@@ -462,8 +463,9 @@ li.card i.fa-pencil {
   padding: 0 0 12px 0;
 }
 #card-detail > .modal header input {
-  width: 100%;
+  width: 94%;
   padding: 4px;
+  margin: 0 0 0 -4px;
   font: bold 18px "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #4d4d4d;
   background: #edeff0;
@@ -474,6 +476,50 @@ li.card i.fa-pencil {
 #card-detail > .modal header input:focus {
   background: #fff;
   outline: none;
+}
+#card-detail > .modal header p {
+  font-size: 14px;
+  color: #8c8c8c;
+}
+#card-detail > .modal header p a {
+  color: #8c8c8c;
+  text-decoration: underline;
+}
+#card-detail > .modal header a.close {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 12px;
+  right: 6px;
+}
+#card-detail > .modal header a.close:before,
+#card-detail > .modal header a.close:after {
+  position: absolute;
+  content: "";
+  background: #999;
+}
+#card-detail > .modal header a.close:before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+  width: 2px;
+}
+#card-detail > .modal header a.close:after {
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  margin-top: -1px;
+}
+#card-detail > .modal header a.close:hover:before,
+#card-detail > .modal header a.close:hover:after {
+  background: #4d4d4d;
 }
 #card-detail > .modal .col {
   display: inline-block;

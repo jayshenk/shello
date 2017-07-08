@@ -38,11 +38,13 @@ this["JST"]["cardDescription"] = Handlebars.template({"1":function(container,dep
 },"useData":true});
 
 this["JST"]["cardDetail"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper;
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
   return "<div class=\"modal\"><header><input type=\"text\" id=\"title\" value=\""
-    + container.escapeExpression(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"title","hash":{},"data":data}) : helper)))
-    + "\" /></header><div class=\"col details\"><section id=\"card-labels\"></section><section id=\"card-due-date\"></section><section id=\"description\"></section><section id=\"comments\"></section></div><div class=\"col actions\"><section><h2>Add</h2><ul><li><a href=\"#\" class=\"labels\"><i class=\"fa fa-tag\" aria-hidden=\"true\"></i>Labels</a></li><li><a href=\"#\" class=\"due-date\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>Due Date</a></li></ul></section><section><h2>Actions</h2><ul><li><a href=\"#\" class=\"move\"><i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i>Move</a></li><li><a href=\"#\" class=\"copy\"><i class=\"fa fa-clone\" aria-hidden=\"true\"></i>Copy</a></li><li><a href=\"#\" class=\"delete-card\"><i class=\"fa fa-minus\" aria-hidden=\"true\"></i>Delete</a></li></ul></section></div></div>";
+    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + "\" /><p>in list <a href=\"#\" class=\"move\">"
+    + alias4(((helper = (helper = helpers.listName || (depth0 != null ? depth0.listName : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"listName","hash":{},"data":data}) : helper)))
+    + "</a><a href=\"#\" class=\"close\"></a></header><div class=\"col details\"><section id=\"card-labels\"></section><section id=\"card-due-date\"></section><section id=\"description\"></section><section id=\"comments\"></section></div><div class=\"col actions\"><section><h2>Add</h2><ul><li><a href=\"#\" class=\"labels\"><i class=\"fa fa-tag\" aria-hidden=\"true\"></i>Labels</a></li><li><a href=\"#\" class=\"due-date\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>Due Date</a></li></ul></section><section><h2>Actions</h2><ul><li><a href=\"#\" class=\"move\"><i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i>Move</a></li><li><a href=\"#\" class=\"copy\"><i class=\"fa fa-clone\" aria-hidden=\"true\"></i>Copy</a></li><li><a href=\"#\" class=\"delete-card\"><i class=\"fa fa-minus\" aria-hidden=\"true\"></i>Delete</a></li></ul></section></div></div>";
 },"useData":true});
 
 this["JST"]["cardDueDate"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {

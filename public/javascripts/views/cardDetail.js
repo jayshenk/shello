@@ -9,17 +9,25 @@ var CardDetailView = Backbone.View.extend({
     'click a.move': 'renderMove',
     'click a.copy': 'renderCopy',
     'click a.delete-card': 'renderDelete',
+    'click a.close': 'close',
     'click': 'destroy'
   },
   updateTitle: function() {
     var title = this.$('#title').val();
     this.model.set('title', title);
   },
+  close: function(e) {
+    e.preventDefault();
+    this.remove();
+  },
   destroy: function(e) {
     if (e.target === this.el) { this.remove(); }
   },
   render: function() {
-    this.$el.html(this.template(this.model.toJSON()));
+    this.$el.html(this.template({
+      title: this.model.get('title'),
+      listName: this.model.collection.list.get('name')
+    }));
     App.$el.append(this.el);
     this.renderCardLabels();
     this.renderCardDueDate();
@@ -80,6 +88,7 @@ var CardDetailView = Backbone.View.extend({
   },
   initialize: function() {
     this.render();
+    this.listenTo(this.model, 'moved', this.render);
     this.listenTo(this.model, 'destroy', this.remove);
   }
 });

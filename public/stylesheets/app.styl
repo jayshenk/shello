@@ -281,6 +281,7 @@ li.card
   > .modal
     width: 730px
     padding: 10px 14px 20px 46px
+    position: relative
     color: #4d4d4d
     font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif
     margin: 50px auto
@@ -290,8 +291,9 @@ li.card
     header
       padding: 0 0 12px 0
       input
-        width: 100%
+        width: 94%
         padding: 4px
+        margin: 0 0 0 -4px
         font: bold 18px "Helvetica Neue", Arial, Helvetica, sans-serif
         color: #4d4d4d
         background: #edeff0
@@ -301,6 +303,17 @@ li.card
         &:focus
           background: #fff
           outline: none;
+      p
+        font-size: 14px
+        color: #8c8c8c
+        a
+          color: #8c8c8c
+          text-decoration: underline
+      a.close
+        close();
+        position: absolute
+        top: 12px
+        right: 6px
     .col
       display: inline-block
       vertical-align: top
