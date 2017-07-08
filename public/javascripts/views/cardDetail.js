@@ -7,6 +7,7 @@ var CardDetailView = Backbone.View.extend({
     'click a.due-date': 'renderDueDate',
     'click .fa-plus': 'renderLabels',
     'click a.move': 'renderMove',
+    'click a.copy': 'renderCopy',
     'click a.delete-card': 'renderDelete',
     'click': 'destroy'
   },
@@ -64,6 +65,12 @@ var CardDetailView = Backbone.View.extend({
     var offset = this.getOffset(e);
     var moveCardView = new MoveCardView({ model: this.model });
     moveCardView.render(offset);
+  },
+  renderCopy: function(e) {
+    e.preventDefault();
+    var offset = this.getOffset(e);
+    var copyCardView = new CopyCardView({ model: this.model });
+    copyCardView.render(offset);
   },
   renderDelete: function(e) {
     e.preventDefault();

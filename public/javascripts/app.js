@@ -36,10 +36,20 @@ var App = {
     var destinationList = this.lists.get(listID);
 
     sourceList.cards.remove(card);
-    card.set('listID', listID);
-    card.set('position', position);
+    card.set({
+      listID: listID,
+      position: position
+    });
     destinationList.cards.add(card);
     card.trigger('moved');
+  },
+  copyCard: function(model, listID, position) {
+    var list = this.lists.get(listID);
+    var card = list.cards.create({
+      title: model.get('title'),
+      listID: listID,
+      position: position
+    }, { wait: true });
   },
   bindEvents: function() {
     _.extend(this, Backbone.Events);
@@ -48,6 +58,7 @@ var App = {
     this.on('show_card_detail', this.renderCardDetail);
     this.on('edit_card', this.editCard);
     this.on('move_card', this.moveCard);
+    this.on('copy_card', this.copyCard);
   },
   init: function(cardsJSON) {
     this.boardView = new BoardView();
