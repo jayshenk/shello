@@ -1,6 +1,6 @@
 var path = require("path");
 var fs = require("fs");
-var file_path = path.resolve(path.dirname(__dirname), "data/dummy_cards.json");
+var file_path = path.resolve(path.dirname(__dirname), "data/cards.json");
 var _ = require("underscore");
 
 module.exports = {

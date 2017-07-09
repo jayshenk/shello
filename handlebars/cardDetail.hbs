@@ -1,6 +1,6 @@
 <div class="modal">
   <header>
-    <input type="text" id="title" value="{{title}}" />
+    <input type="text" id="title" value="{{card.title}}" />
     <p>in list <a href="#" class="move">{{listName}}</a>
     <a href="#" class="close"></a>
   </header>
@@ -41,6 +41,13 @@
           <a href="#" class="copy">
             <i class="fa fa-clone" aria-hidden="true"></i>
             Copy
+          </a>
+        </li>
+        <li>
+          <a href="#" class="subscribe{{#if card.subscribed}} active{{/if}}">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            Subscribe
+            <i class="fa fa-check-square" aria-hidden="true"></i>
           </a>
         </li>
         <li>

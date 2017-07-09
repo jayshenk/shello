@@ -3,6 +3,7 @@ var BoardView = Backbone.View.extend({
   template: App.templates.board,
   events: {
     'click #search': 'renderSearch',
+    'click a.notifications': 'renderNotifications',
     'click': 'removeSearch'
   },
   renderSearch: function() {
@@ -14,6 +15,10 @@ var BoardView = Backbone.View.extend({
       this.searchView.destroy();
       this.searchView = null;
     }
+  },
+  renderNotifications: function(e) {
+    e.preventDefault();
+    new NotificationsView();
   },
   render: function() {
     this.$el.html(this.template());

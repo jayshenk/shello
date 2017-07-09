@@ -1,6 +1,7 @@
 var App = {
   templates: JST,
   $el: $(document.body),
+  notifications: [],
   setupLists: function(cardsJSON) {
     this.lists.each(function(list) {
       list.cards = new Cards(_(cardsJSON).where({ listID: list.get('id') }));
@@ -47,9 +48,13 @@ var App = {
     var list = this.lists.get(listID);
     var card = list.cards.create({
       title: model.get('title'),
+      description: model.get('description'),
       listID: listID,
       position: position
     }, { wait: true });
+  },
+  addNotification: function(message) {
+    this.notifications.unshift(message);
   },
   bindEvents: function() {
     _.extend(this, Backbone.Events);
@@ -59,6 +64,7 @@ var App = {
     this.on('edit_card', this.editCard);
     this.on('move_card', this.moveCard);
     this.on('copy_card', this.copyCard);
+    this.on('notification', this.addNotification);
   },
   init: function(cardsJSON) {
     this.boardView = new BoardView();

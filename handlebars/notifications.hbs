@@ -1,0 +1,15 @@
+<div class="modal">
+  <header>
+    <h1>Notifications</h1>
+    <a href="#" class="close"></a>
+  </header>
+  {{#if notifications}}
+  <ul>
+    {{#each notifications}}
+    <li>{{.}}</li>
+    {{/each}}
+  </ul>
+  {{else}}
+  <p>No Notifications</p>
+  {{/if}}
+</div>

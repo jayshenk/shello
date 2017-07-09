@@ -124,10 +124,10 @@ body > header .heading h1 {
   font-size: 18px;
   color: #f6f6f6;
 }
-body > header #notifications {
+body > header .notifications {
   flex: 3 3 0;
 }
-body > header #notifications a.fa {
+body > header .notifications a.fa {
   float: right;
   width: 30px;
   font-size: 18px;
@@ -137,7 +137,7 @@ body > header #notifications a.fa {
   background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0, rgba(255,255,255,0.2) 100%);
   border-radius: 5px;
 }
-body > header #notifications a.fa:hover {
+body > header .notifications a.fa:hover {
   background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0, rgba(255,255,255,0.3) 100%);
 }
 main {
@@ -526,7 +526,7 @@ li.card i.fa-pencil {
   vertical-align: top;
 }
 #card-detail > .modal .details {
-  width: 75%;
+  width: 80%;
   padding: 0 20px 0 0;
   box-sizing: border-box;
 }
@@ -752,7 +752,7 @@ li.card i.fa-pencil {
   border-radius: 3px;
 }
 #card-detail > .modal .actions {
-  width: 25%;
+  width: 20%;
 }
 #card-detail > .modal .actions section {
   padding: 20px 0 0 0;
@@ -763,7 +763,7 @@ li.card i.fa-pencil {
 }
 #card-detail > .modal .actions section ul li a {
   display: block;
-  padding: 10px;
+  padding: 8px;
   margin: 0 0 6px 0;
   color: #444;
   font-weight: bold;
@@ -781,6 +781,23 @@ li.card i.fa-pencil {
 #card-detail > .modal .actions section ul li a i {
   padding: 0 6px 0 0;
   color: #999;
+}
+#card-detail > .modal .actions section ul li a.subscribe {
+  position: relative;
+}
+#card-detail > .modal .actions section ul li a.subscribe .fa-check-square {
+  display: none;
+  position: absolute;
+  top: 4px;
+  right: 0;
+  font-size: 26px;
+  color: #60bc45;
+}
+#card-detail > .modal .actions section ul li a.subscribe:hover .fa-check-square {
+  color: #68b2dc;
+}
+#card-detail > .modal .actions section ul li a.subscribe.active .fa-check-square {
+  display: block;
 }
 .modal-backdrop {
   position: fixed;
@@ -1094,6 +1111,75 @@ li.card i.fa-pencil {
   cursor: pointer;
   color: #fff;
   background: linear-gradient(to bottom, #d0513b 0, #b14631 100%);
+}
+#notifications .modal {
+  position: absolute;
+  top: 40px;
+  right: 6px;
+  width: 450px;
+  padding: 10px;
+  background: #edeff0;
+  border: 1px solid #c4c9cc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+#notifications .modal header {
+  text-align: center;
+  border-bottom: 1px solid #d6dadc;
+}
+#notifications .modal header h1 {
+  display: inline-block;
+  padding: 0 0 10px 0;
+  font-weight: normal;
+  color: #8c8c8c;
+}
+#notifications .modal header a.close {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+  transform: rotate(45deg);
+  float: right;
+  width: 12px;
+  height: 12px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+#notifications .modal header a.close:before,
+#notifications .modal header a.close:after {
+  position: absolute;
+  content: "";
+  background: #999;
+}
+#notifications .modal header a.close:before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+  width: 2px;
+}
+#notifications .modal header a.close:after {
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  margin-top: -1px;
+}
+#notifications .modal header a.close:hover:before,
+#notifications .modal header a.close:hover:after {
+  background: #4d4d4d;
+}
+#notifications .modal p {
+  padding: 40px 0;
+  color: #8c8c8c;
+  text-align: center;
+}
+#notifications .modal ul li {
+  padding: 10px;
+  color: #4d4d4d;
+  border-bottom: 1px solid #d6dadc;
 }
 .gu-mirror {
   transform: rotate(4deg);

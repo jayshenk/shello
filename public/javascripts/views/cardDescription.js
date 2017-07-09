@@ -21,6 +21,7 @@ var CardDescriptionView = Backbone.View.extend({
     e.preventDefault();
     var description = this.$('textarea').val();
     this.model.set('description', description);
+    this.model.trigger('description_updated');
     this.render();
   },
   render: function() {

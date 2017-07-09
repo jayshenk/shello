@@ -5,7 +5,7 @@ this["JST"]["addList"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":f
 },"useData":true});
 
 this["JST"]["board"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<header><div id=\"search\"><input type=\"text\" /><i class=\"fa fa-search fa-flip-horizontal\" aria-hidden=\"true\"></i><a href=\"#\" class=\"close\"></a></div><div class=\"heading\"><h1>Trello Clone</h1></div><div id=\"notifications\"><a href=\"#\" class=\"fa fa-bell-o\" aria-hidden=\"true\"></a></div></header><main><header><h2>Board</h2></header><div class=\"container\"><ul id=\"lists\"></ul></div></main>";
+    return "<header><div id=\"search\"><input type=\"text\" /><i class=\"fa fa-search fa-flip-horizontal\" aria-hidden=\"true\"></i><a href=\"#\" class=\"close\"></a></div><div class=\"heading\"><h1>Trello Clone</h1></div><div class=\"notifications\"><a href=\"#\" class=\"fa fa-bell-o notifications\" aria-hidden=\"true\"></a></div></header><main><header><h2>Board</h2></header><div class=\"container\"><ul id=\"lists\"></ul></div></main>";
 },"useData":true});
 
 this["JST"]["card"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
@@ -37,14 +37,18 @@ this["JST"]["cardDescription"] = Handlebars.template({"1":function(container,dep
   return ((stack1 = helpers["if"].call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.description : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data})) != null ? stack1 : "");
 },"useData":true});
 
-this["JST"]["cardDetail"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+this["JST"]["cardDetail"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    return " active";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=container.escapeExpression, alias2=depth0 != null ? depth0 : (container.nullContext || {});
 
   return "<div class=\"modal\"><header><input type=\"text\" id=\"title\" value=\""
-    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + alias1(container.lambda(((stack1 = (depth0 != null ? depth0.card : depth0)) != null ? stack1.title : stack1), depth0))
     + "\" /><p>in list <a href=\"#\" class=\"move\">"
-    + alias4(((helper = (helper = helpers.listName || (depth0 != null ? depth0.listName : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"listName","hash":{},"data":data}) : helper)))
-    + "</a><a href=\"#\" class=\"close\"></a></header><div class=\"col details\"><section id=\"card-labels\"></section><section id=\"card-due-date\"></section><section id=\"description\"></section><section id=\"comments\"></section></div><div class=\"col actions\"><section><h2>Add</h2><ul><li><a href=\"#\" class=\"labels\"><i class=\"fa fa-tag\" aria-hidden=\"true\"></i>Labels</a></li><li><a href=\"#\" class=\"due-date\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>Due Date</a></li></ul></section><section><h2>Actions</h2><ul><li><a href=\"#\" class=\"move\"><i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i>Move</a></li><li><a href=\"#\" class=\"copy\"><i class=\"fa fa-clone\" aria-hidden=\"true\"></i>Copy</a></li><li><a href=\"#\" class=\"delete-card\"><i class=\"fa fa-minus\" aria-hidden=\"true\"></i>Delete</a></li></ul></section></div></div>";
+    + alias1(((helper = (helper = helpers.listName || (depth0 != null ? depth0.listName : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias2,{"name":"listName","hash":{},"data":data}) : helper)))
+    + "</a><a href=\"#\" class=\"close\"></a></header><div class=\"col details\"><section id=\"card-labels\"></section><section id=\"card-due-date\"></section><section id=\"description\"></section><section id=\"comments\"></section></div><div class=\"col actions\"><section><h2>Add</h2><ul><li><a href=\"#\" class=\"labels\"><i class=\"fa fa-tag\" aria-hidden=\"true\"></i>Labels</a></li><li><a href=\"#\" class=\"due-date\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>Due Date</a></li></ul></section><section><h2>Actions</h2><ul><li><a href=\"#\" class=\"move\"><i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i>Move</a></li><li><a href=\"#\" class=\"copy\"><i class=\"fa fa-clone\" aria-hidden=\"true\"></i>Copy</a></li><li><a href=\"#\" class=\"subscribe"
+    + ((stack1 = helpers["if"].call(alias2,((stack1 = (depth0 != null ? depth0.card : depth0)) != null ? stack1.subscribed : stack1),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>Subscribe<i class=\"fa fa-check-square\" aria-hidden=\"true\"></i></a></li><li><a href=\"#\" class=\"delete-card\"><i class=\"fa fa-minus\" aria-hidden=\"true\"></i>Delete</a></li></ul></section></div></div>";
 },"useData":true});
 
 this["JST"]["cardDueDate"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
@@ -241,6 +245,26 @@ this["JST"]["newLabel"] = Handlebars.template({"1":function(container,depth0,hel
 
 this["JST"]["newList"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<fieldset><input id=\"name\" type=\"text\" placeholder=\"Add a list...\" /><button type=\"submit\">Save</button><a href=\"#\" class=\"close\"></a></fieldset>";
+},"useData":true});
+
+this["JST"]["notifications"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return "<ul>"
+    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.notifications : depth0),{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "</ul>";
+},"2":function(container,depth0,helpers,partials,data) {
+    return "<li>"
+    + container.escapeExpression(container.lambda(depth0, depth0))
+    + "</li>";
+},"4":function(container,depth0,helpers,partials,data) {
+    return "<p>No Notifications</p>";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return "<div class=\"modal\"><header><h1>Notifications</h1><a href=\"#\" class=\"close\"></a></header>"
+    + ((stack1 = helpers["if"].call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.notifications : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(4, data, 0),"data":data})) != null ? stack1 : "")
+    + "</div>";
 },"useData":true});
 
 this["JST"]["positions"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {

@@ -8,6 +8,7 @@ var CardDetailView = Backbone.View.extend({
     'click .fa-plus': 'renderLabels',
     'click a.move': 'renderMove',
     'click a.copy': 'renderCopy',
+    'click a.subscribe': 'toggleSubscribe',
     'click a.delete-card': 'renderDelete',
     'click a.close': 'close',
     'click': 'destroy'
@@ -25,7 +26,7 @@ var CardDetailView = Backbone.View.extend({
   },
   render: function() {
     this.$el.html(this.template({
-      title: this.model.get('title'),
+      card: this.model.toJSON(),
       listName: this.model.collection.list.get('name')
     }));
     App.$el.append(this.el);
@@ -79,6 +80,13 @@ var CardDetailView = Backbone.View.extend({
     var offset = this.getOffset(e);
     var copyCardView = new CopyCardView({ model: this.model });
     copyCardView.render(offset);
+  },
+  toggleSubscribe: function(e) {
+    e.preventDefault();
+    var $el = this.$('a.subscribe');
+
+    $el.toggleClass('active');
+    this.model.set('subscribed', $el.hasClass('active'));
   },
   renderDelete: function(e) {
     e.preventDefault();
